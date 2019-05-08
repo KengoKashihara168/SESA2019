@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     Transform effect;
-    
 
 	// Use this for initialization
 	void Start ()
@@ -22,5 +21,6 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         effect.GetComponent<StarEffectController>().Play(false);
+        GameObject.Find("Vcam").GetComponent<VCameraController>().Shake();
     }
 }
