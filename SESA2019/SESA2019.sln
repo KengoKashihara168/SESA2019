@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SESA2019", "SESA2019.csproj", "{47B0A1F6-4907-A6FE-15C1-A4E915FA083D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SESA2019.Editor", "SESA2019.Editor.csproj", "{AE042DE4-12D3-4EC0-80AF-D0EC58AD3ADF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{47B0A1F6-4907-A6FE-15C1-A4E915FA083D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47B0A1F6-4907-A6FE-15C1-A4E915FA083D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47B0A1F6-4907-A6FE-15C1-A4E915FA083D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47B0A1F6-4907-A6FE-15C1-A4E915FA083D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE042DE4-12D3-4EC0-80AF-D0EC58AD3ADF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE042DE4-12D3-4EC0-80AF-D0EC58AD3ADF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE042DE4-12D3-4EC0-80AF-D0EC58AD3ADF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE042DE4-12D3-4EC0-80AF-D0EC58AD3ADF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
