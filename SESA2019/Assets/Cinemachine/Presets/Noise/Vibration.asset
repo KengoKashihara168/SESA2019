@@ -15,18 +15,18 @@ MonoBehaviour:
   m_Orientation:
   - X:
       Amplitude: 20
-      Frequency: 3
+      Frequency: 4
     Y:
-      Amplitude: 5
-      Frequency: 0.8
+      Amplitude: 2
+      Frequency: 3
     Z:
       Amplitude: 0
       Frequency: 0
   - X:
-      Amplitude: 15
-      Frequency: 4
-    Y:
       Amplitude: 5
+      Frequency: 2
+    Y:
+      Amplitude: 1
       Frequency: 1
     Z:
       Amplitude: 0

@@ -25,10 +25,13 @@ public class SceneController : MonoBehaviour
                 FadeManager.Instance.LoadScene("SelectScene",1.0f);
                 break;
             case "SelectScene":
-                FadeManager.Instance.LoadScene("TitleScene",1.0f);
+                FadeManager.Instance.LoadScene("StartScene",1.0f);
+                break;
+            case "StartScene":
+                SceneManager.LoadScene("GameScene");
                 break;
             case "GameScene":
-                FadeManager.Instance.LoadScene("ResultScene",1.0f);
+                FadeManager.Instance.LoadScene("SelectScene",1.0f);
                 break;
             case "ResultScene":
                 FadeManager.Instance.LoadScene("TitleScene",1.0f);

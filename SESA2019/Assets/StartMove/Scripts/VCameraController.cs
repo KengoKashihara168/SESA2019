@@ -5,27 +5,47 @@ using Cinemachine;
 
 public class VCameraController : MonoBehaviour
 {
-    int noiseTime;
+    bool shakeFlag;
+    public CinemachineVirtualCamera firstVcam;
+    public CinemachineVirtualCamera secondVcam;
+    public int shakeTime;
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start ()
     {
-        noiseTime = -1;
-	}
+        if (firstVcam.Priority < secondVcam.Priority)
+        {
+            ChangePriority();
+        }
+        shakeFlag = false;
+    }
 	
 	// Update is called once per frame
 	void Update ()
     {
-		if(noiseTime == 0)
+        if(shakeFlag)
         {
-            this.gameObject.SetActive(true);
+            shakeTime--;
+            if(shakeTime <= 0)
+            {
+                ChangePriority();
+                shakeFlag = false;
+            }
         }
-        noiseTime--;
 	}
 
     public void Shake()
     {
-        this.gameObject.SetActive(false);
-        noiseTime = 60;
+        if (shakeFlag) return;
+        shakeFlag = true;
+        ChangePriority();
+    }
+
+    void ChangePriority()
+    {
+        Debug.Assert(firstVcam != secondVcam, "カメラの優先度が同じです");
+        int tmp = firstVcam.Priority;
+        firstVcam.Priority = secondVcam.Priority;
+        secondVcam.Priority = tmp;
     }
 }

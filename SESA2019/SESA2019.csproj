@@ -334,12 +334,10 @@
     <Compile Include="Assets\Cinemachine\Base\Runtime\Core\ReflectionHelpers.cs" />
     <Compile Include="Assets\Cinemachine\Base\Runtime\Core\SplineHelpers.cs" />
     <Compile Include="Assets\Cinemachine\Base\Runtime\Core\UnityVectorExtensions.cs" />
-    <Compile Include="Assets\Cinemachine\Timeline\CinemachineMixer.cs" />
-    <Compile Include="Assets\Cinemachine\Timeline\CinemachineShot.cs" />
-    <Compile Include="Assets\Cinemachine\Timeline\CinemachineTrack.cs" />
     <Compile Include="Assets\Common\Scripts\SceneController.cs" />
     <Compile Include="Assets\FadeManager\naichilab\FadeManager\Sample\FadeSample.cs" />
     <Compile Include="Assets\FadeManager\naichilab\FadeManager\Scripts\FadeManager.cs" />
+    <Compile Include="Assets\GameScene.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\GetSetAttribute.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\MinAttribute.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\TrackballAttribute.cs" />
@@ -391,6 +389,7 @@
     <Compile Include="Assets\SelectScene\Scripts\StarEffectController.cs" />
     <Compile Include="Assets\SelectScene\Scripts\ZoomController.cs" />
     <Compile Include="Assets\StartMove\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\StartMove\Scripts\VCameraController.cs" />
     <Compile Include="Assets\TitleScene\Scripts\CameraController.cs" />
     <Compile Include="Assets\TitleScene\Scripts\StarController.cs" />
     <Compile Include="Assets\TitleScene\Scripts\TitleController.cs" />
