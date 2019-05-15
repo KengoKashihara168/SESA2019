@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.name == "ScreenArea")
         {
-            GameObject.Find("SceneManager").GetComponent<SceneController>().ChangeScene();
+            SceneController.Instance.ChangeScene("GameScene", 0.0f);
         }
     }
 }

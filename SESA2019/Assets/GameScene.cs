@@ -14,7 +14,7 @@ public class GameScene : MonoBehaviour {
 	void Update () {
 		if(time == 0)
         {
-            GameObject.Find("SceneManager").GetComponent<SceneController>().ChangeScene();
+            SceneController.Instance.ChangeScene("SelectScene", 1.0f);
         }
         time--;
 	}

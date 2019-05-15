@@ -91,7 +91,6 @@
      <Compile Include="Assets\Cinemachine\Base\Editor\Windows\AboutWindow.cs" />
      <Compile Include="Assets\Cinemachine\Base\Editor\Windows\CinemachineColliderPrefs.cs" />
      <Compile Include="Assets\Cinemachine\Base\Editor\Windows\CinemachineSettings.cs" />
-     <Compile Include="Assets\Cinemachine\Timeline\Editor\CinemachineShotEditor.cs" />
      <Compile Include="Assets\PostProcessing\Editor\Attributes\PostProcessingModelEditorAttribute.cs" />
      <Compile Include="Assets\PostProcessing\Editor\Models\AmbientOcclusionModelEditor.cs" />
      <Compile Include="Assets\PostProcessing\Editor\Models\AntialiasingModelEditor.cs" />

@@ -7,13 +7,15 @@ public class StarController : MonoBehaviour
     Vector2 move;
     float gravity;
     public bool fallFlag;
+    int count;
 
     // Use this for initialization
     void Start ()
     {
         move = new Vector2();
         gravity = 0.05f;
-	}
+        count = -1;
+    }
 	
 	// Update is called once per frame
 	void Update ()
@@ -30,5 +32,18 @@ public class StarController : MonoBehaviour
         }
         
         this.gameObject.transform.Translate(move);
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            fallFlag = true;
+            count = 30;
+        }
+
+        if (count >= 0) count--;
+
+        if (count == 0)
+        {
+            SceneController.Instance.ChangeScene("SelectScene", 1.0f);
+        }
     }
 }

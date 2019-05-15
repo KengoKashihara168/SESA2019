@@ -26,7 +26,7 @@ public class TitleController : MonoBehaviour
 
         if (count == 0)
         {
-            GameObject.Find("SceneManager").GetComponent<SceneController>().ChangeScene();
+            SceneController.Instance.ChangeScene("SelectScene", 1.0f);
         }
 
 	}

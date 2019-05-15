@@ -55,9 +55,8 @@ public class StageController : MonoBehaviour
         if (stage.GetComponent<StageData>().GetFlag()) // 既に選択されていたら
         {
             // 選択されているステージに遷移
-            Debug.Log(stage.name);
+            SceneController.Instance.ChangeScene("StartScene", 1.0f);
             //GetComponent<ZoomController>().Zoom(selectStage.transform);
-            GameObject.Find("SceneManager").GetComponent<SceneController>().ChangeScene();
         }
         else
         {

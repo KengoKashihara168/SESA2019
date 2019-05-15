@@ -5,37 +5,25 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
-	// Use this for initialization
-	void Start ()
-    {
-		
-	}
-	
-	// Update is called once per frame
-	void Update ()
-    {
-		
-	}
+    private static SceneController instance;
 
-    public void ChangeScene()
+    public static SceneController Instance
     {
-        switch(SceneManager.GetActiveScene().name)
+        get
         {
-            case "TitleScene":
-                FadeManager.Instance.LoadScene("SelectScene",1.0f);
-                break;
-            case "SelectScene":
-                FadeManager.Instance.LoadScene("StartScene",1.0f);
-                break;
-            case "StartScene":
-                SceneManager.LoadScene("GameScene");
-                break;
-            case "GameScene":
-                FadeManager.Instance.LoadScene("SelectScene",1.0f);
-                break;
-            case "ResultScene":
-                FadeManager.Instance.LoadScene("TitleScene",1.0f);
-                break;
+            if (instance == null)
+            {
+                GameObject obj = new GameObject("SceneController");
+                instance = obj.AddComponent<SceneController>();
+            }
+            return instance;
         }
+
+        set { }
+    }
+
+    public void ChangeScene(string sceneName, float fadeTime = 0.0f)
+    {
+        FadeManager.Instance.LoadScene(sceneName, fadeTime);
     }
 }
