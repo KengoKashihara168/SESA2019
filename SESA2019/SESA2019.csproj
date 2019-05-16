@@ -286,6 +286,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="UniRx.Async.Editor.csproj">
+      <Project>{563CD0CC-17BA-5561-0993-B79624F15579}</Project>
+      <Name>UniRx.Async.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="UniRx.csproj">
+      <Project>{27D79D8D-558D-B61A-7B9D-B46758AE7244}</Project>
+      <Name>UniRx</Name>
+    </ProjectReference>
+    <ProjectReference Include="UniRx.Examples.csproj">
+      <Project>{6E68EFC9-6D8F-F785-7811-7FCBFAA4F1DF}</Project>
+      <Name>UniRx.Examples</Name>
+    </ProjectReference>
+    <ProjectReference Include="UniRx.Async.csproj">
+      <Project>{0C124D0D-0BB9-A882-745C-17BD2F6ED3CD}</Project>
+      <Name>UniRx.Async</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Assets\Cinemachine\Base\Runtime\Behaviours\CinemachineBlendListCamera.cs" />
     <Compile Include="Assets\Cinemachine\Base\Runtime\Behaviours\CinemachineBrain.cs" />
     <Compile Include="Assets\Cinemachine\Base\Runtime\Behaviours\CinemachineClearShot.cs" />
@@ -337,7 +355,7 @@
     <Compile Include="Assets\Common\Scripts\SceneController.cs" />
     <Compile Include="Assets\FadeManager\naichilab\FadeManager\Sample\FadeSample.cs" />
     <Compile Include="Assets\FadeManager\naichilab\FadeManager\Scripts\FadeManager.cs" />
-    <Compile Include="Assets\GameScene.cs" />
+    <Compile Include="Assets\GameScene\GameScene.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\GetSetAttribute.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\MinAttribute.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\TrackballAttribute.cs" />
@@ -390,12 +408,15 @@
     <Compile Include="Assets\SelectScene\Scripts\ZoomController.cs" />
     <Compile Include="Assets\StartMove\Scripts\PlayerController.cs" />
     <Compile Include="Assets\StartMove\Scripts\VCameraController.cs" />
-    <Compile Include="Assets\TitleScene\Scripts\CameraController.cs" />
     <Compile Include="Assets\TitleScene\Scripts\StarController.cs" />
-    <Compile Include="Assets\TitleScene\Scripts\TitleController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Cinemachine\ReleaseNotes.txt" />
+    <None Include="Assets\Plugins\UniRx\Examples\UniRx.Examples.asmdef" />
+    <None Include="Assets\Plugins\UniRx\ReadMe.txt" />
+    <None Include="Assets\Plugins\UniRx\Scripts\Async\Editor\UniRx.Async.Editor.asmdef" />
+    <None Include="Assets\Plugins\UniRx\Scripts\Async\UniRx.Async.asmdef" />
+    <None Include="Assets\Plugins\UniRx\Scripts\UniRx.asmdef" />
     <None Include="Assets\PostProcessing\Editor Resources\Monitors\HistogramCompute.compute" />
     <None Include="Assets\PostProcessing\Editor Resources\Monitors\HistogramRender.shader" />
     <None Include="Assets\PostProcessing\Editor Resources\Monitors\ParadeRender.shader" />

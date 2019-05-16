@@ -1,49 +1,57 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using UniRx;
+using UniRx.Triggers;
 
 public class StarController : MonoBehaviour
 {
-    Vector2 move;
+    float moveY;
     float gravity;
-    public bool fallFlag;
-    int count;
+    UnityAction action;
 
     // Use this for initialization
     void Start ()
     {
-        move = new Vector2();
-        gravity = 0.05f;
-        count = -1;
+        gravity = 0.7f;
+        action = Float;
+
+        this.UpdateAsObservable().First(x => transform.position.y <= -2.0f).Subscribe(x => SceneTransition());
     }
 	
 	// Update is called once per frame
 	void Update ()
-    {        
-        if(!fallFlag)
-        {
-            float sin = Mathf.Sin(Time.time);
-            move.y = sin * 0.01f;
-        }
-        else
-        {
-            move.y -= gravity;
-            gravity *= 1.01f;
-        }
-        
-        this.gameObject.transform.Translate(move);
-
+    {
         if (Input.GetMouseButtonDown(0))
         {
-            fallFlag = true;
-            count = 30;
+            action = Fall;            
         }
 
-        if (count >= 0) count--;
+        Move(action);       
+    }
 
-        if (count == 0)
-        {
-            SceneController.Instance.ChangeScene("SelectScene", 1.0f);
-        }
+    private void Move(UnityAction callback)
+    {
+        callback();
+        Vector2 move = new Vector2(0.0f, moveY);
+        transform.position = move;
+    }
+
+    private void Float()
+    {
+        float sin = Mathf.Sin(Time.time);
+        moveY = sin;
+    }
+
+    private void Fall()
+    {
+        gravity *= 1.01f;
+        moveY = transform.position.y - gravity;
+    }
+
+    private void SceneTransition()
+    {        
+        SceneController.Instance.ChangeScene("SelectScene", 1.0f);
     }
 }
