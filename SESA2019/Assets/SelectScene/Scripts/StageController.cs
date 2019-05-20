@@ -5,8 +5,9 @@ using UnityEngine.UI;
 
 public class StageController : MonoBehaviour
 {
-    public Image[] stage;    // ステージ
-    public Image   describe; // 説明テキスト
+    [SerializeField] Image[] stage;    // ステージ
+    [SerializeField] Button  describe; // 説明テキスト
+    bool changeFlag;
 
 	// Use this for initialization
 	void Start ()
@@ -18,7 +19,9 @@ public class StageController : MonoBehaviour
             i.GetComponent<StageData>().SetCenterPoint(center);
         }
         // 説明テキストを非表示にする
-        describe.transform.GetChild(0).GetComponent<Image>().color = Color.clear;
+        describe.GetComponent<Image>().color = Color.clear;
+
+        changeFlag = false;
     }
 	
 	// Update is called once per frame
@@ -55,7 +58,7 @@ public class StageController : MonoBehaviour
         if (stage.GetComponent<StageData>().GetFlag()) // 既に選択されていたら
         {
             // 選択されているステージに遷移
-            SceneController.Instance.ChangeScene("StartScene", 1.0f);
+            SceneTransition();
             //GetComponent<ZoomController>().Zoom(selectStage.transform);
         }
         else
@@ -73,8 +76,15 @@ public class StageController : MonoBehaviour
     // 説明テキストの設定
     public void SetDescribeImage(Sprite text)
     {
-        Transform child = describe.transform.GetChild(0);
-        child.GetComponent<Image>().sprite = text;       // 画像を設定する
-        child.GetComponent<Image>().color = Color.white; // 画像を表示する
+        //Transform child = describe.transform.GetChild(0);
+        describe.GetComponent<Image>().sprite = text;       // 画像を設定する
+        describe.GetComponent<Image>().color = Color.white; // 画像を表示する
+    }
+
+    public void SceneTransition()
+    {
+        if (changeFlag) return;
+        SceneController.Instance.ChangeScene("StartScene", 1.0f);
+        changeFlag = false;
     }
 }
