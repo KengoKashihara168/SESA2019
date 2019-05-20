@@ -286,10 +286,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="UniRx.Async.Editor.csproj">
-      <Project>{563CD0CC-17BA-5561-0993-B79624F15579}</Project>
-      <Name>UniRx.Async.Editor</Name>
-    </ProjectReference>
     <ProjectReference Include="UniRx.csproj">
       <Project>{27D79D8D-558D-B61A-7B9D-B46758AE7244}</Project>
       <Name>UniRx</Name>
@@ -302,60 +298,71 @@
       <Project>{0C124D0D-0BB9-A882-745C-17BD2F6ED3CD}</Project>
       <Name>UniRx.Async</Name>
     </ProjectReference>
+    <ProjectReference Include="UniRx.Async.Editor.csproj">
+      <Project>{563CD0CC-17BA-5561-0993-B79624F15579}</Project>
+      <Name>UniRx.Async.Editor</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Cinemachine\Base\Runtime\Behaviours\CinemachineBlendListCamera.cs" />
-    <Compile Include="Assets\Cinemachine\Base\Runtime\Behaviours\CinemachineBrain.cs" />
-    <Compile Include="Assets\Cinemachine\Base\Runtime\Behaviours\CinemachineClearShot.cs" />
-    <Compile Include="Assets\Cinemachine\Base\Runtime\Behaviours\CinemachineCollider.cs" />
-    <Compile Include="Assets\Cinemachine\Base\Runtime\Behaviours\CinemachineConfiner.cs" />
-    <Compile Include="Assets\Cinemachine\Base\Runtime\Behaviours\CinemachineDollyCart.cs" />
-    <Compile Include="Assets\Cinemachine\Base\Runtime\Behaviours\CinemachineExternalCamera.cs" />
-    <Compile Include="Assets\Cinemachine\Base\Runtime\Behaviours\CinemachineFollowZoom.cs" />
-    <Compile Include="Assets\Cinemachine\Base\Runtime\Behaviours\CinemachineFreeLook.cs" />
-    <Compile Include="Assets\Cinemachine\Base\Runtime\Behaviours\CinemachineMixingCamera.cs" />
-    <Compile Include="Assets\Cinemachine\Base\Runtime\Behaviours\CinemachinePath.cs" />
-    <Compile Include="Assets\Cinemachine\Base\Runtime\Behaviours\CinemachinePipeline.cs" />
-    <Compile Include="Assets\Cinemachine\Base\Runtime\Behaviours\CinemachineSmoother.cs" />
-    <Compile Include="Assets\Cinemachine\Base\Runtime\Behaviours\CinemachineSmoothPath.cs" />
-    <Compile Include="Assets\Cinemachine\Base\Runtime\Behaviours\CinemachineStateDrivenCamera.cs" />
-    <Compile Include="Assets\Cinemachine\Base\Runtime\Behaviours\CinemachineTargetGroup.cs" />
-    <Compile Include="Assets\Cinemachine\Base\Runtime\Behaviours\CinemachineVirtualCamera.cs" />
-    <Compile Include="Assets\Cinemachine\Base\Runtime\Components\CinemachineBasicMultiChannelPerlin.cs" />
-    <Compile Include="Assets\Cinemachine\Base\Runtime\Components\CinemachineComposer.cs" />
-    <Compile Include="Assets\Cinemachine\Base\Runtime\Components\CinemachineFramingTransposer.cs" />
-    <Compile Include="Assets\Cinemachine\Base\Runtime\Components\CinemachineGroupComposer.cs" />
-    <Compile Include="Assets\Cinemachine\Base\Runtime\Components\CinemachineHardLockToTarget.cs" />
-    <Compile Include="Assets\Cinemachine\Base\Runtime\Components\CinemachineHardLookAt.cs" />
-    <Compile Include="Assets\Cinemachine\Base\Runtime\Components\CinemachineOrbitalTransposer.cs" />
-    <Compile Include="Assets\Cinemachine\Base\Runtime\Components\CinemachinePOV.cs" />
-    <Compile Include="Assets\Cinemachine\Base\Runtime\Components\CinemachineSameAsFollowObject.cs" />
-    <Compile Include="Assets\Cinemachine\Base\Runtime\Components\CinemachineTrackedDolly.cs" />
-    <Compile Include="Assets\Cinemachine\Base\Runtime\Components\CinemachineTransposer.cs" />
-    <Compile Include="Assets\Cinemachine\Base\Runtime\Core\AxisState.cs" />
-    <Compile Include="Assets\Cinemachine\Base\Runtime\Core\CameraState.cs" />
-    <Compile Include="Assets\Cinemachine\Base\Runtime\Core\CinemachineBlend.cs" />
-    <Compile Include="Assets\Cinemachine\Base\Runtime\Core\CinemachineBlenderSettings.cs" />
-    <Compile Include="Assets\Cinemachine\Base\Runtime\Core\CinemachineComponentBase.cs" />
-    <Compile Include="Assets\Cinemachine\Base\Runtime\Core\CinemachineCore.cs" />
-    <Compile Include="Assets\Cinemachine\Base\Runtime\Core\CinemachineDebugLogger.cs" />
-    <Compile Include="Assets\Cinemachine\Base\Runtime\Core\CinemachineExtension.cs" />
-    <Compile Include="Assets\Cinemachine\Base\Runtime\Core\CinemachinePathBase.cs" />
-    <Compile Include="Assets\Cinemachine\Base\Runtime\Core\CinemachinePropertyAttribute.cs" />
-    <Compile Include="Assets\Cinemachine\Base\Runtime\Core\CinemachineVirtualCameraBase.cs" />
-    <Compile Include="Assets\Cinemachine\Base\Runtime\Core\GaussianFilter.cs" />
-    <Compile Include="Assets\Cinemachine\Base\Runtime\Core\ICinemachineCamera.cs" />
-    <Compile Include="Assets\Cinemachine\Base\Runtime\Core\ICinemachineComponent.cs" />
-    <Compile Include="Assets\Cinemachine\Base\Runtime\Core\LensSettings.cs" />
-    <Compile Include="Assets\Cinemachine\Base\Runtime\Core\NoiseSettings.cs" />
-    <Compile Include="Assets\Cinemachine\Base\Runtime\Core\Predictor.cs" />
-    <Compile Include="Assets\Cinemachine\Base\Runtime\Core\ReflectionHelpers.cs" />
-    <Compile Include="Assets\Cinemachine\Base\Runtime\Core\SplineHelpers.cs" />
-    <Compile Include="Assets\Cinemachine\Base\Runtime\Core\UnityVectorExtensions.cs" />
+    <Compile Include="Assets\Common\DLAssets\Cinemachine\Base\Runtime\Behaviours\CinemachineBlendListCamera.cs" />
+    <Compile Include="Assets\Common\DLAssets\Cinemachine\Base\Runtime\Behaviours\CinemachineBrain.cs" />
+    <Compile Include="Assets\Common\DLAssets\Cinemachine\Base\Runtime\Behaviours\CinemachineClearShot.cs" />
+    <Compile Include="Assets\Common\DLAssets\Cinemachine\Base\Runtime\Behaviours\CinemachineCollider.cs" />
+    <Compile Include="Assets\Common\DLAssets\Cinemachine\Base\Runtime\Behaviours\CinemachineConfiner.cs" />
+    <Compile Include="Assets\Common\DLAssets\Cinemachine\Base\Runtime\Behaviours\CinemachineDollyCart.cs" />
+    <Compile Include="Assets\Common\DLAssets\Cinemachine\Base\Runtime\Behaviours\CinemachineExternalCamera.cs" />
+    <Compile Include="Assets\Common\DLAssets\Cinemachine\Base\Runtime\Behaviours\CinemachineFollowZoom.cs" />
+    <Compile Include="Assets\Common\DLAssets\Cinemachine\Base\Runtime\Behaviours\CinemachineFreeLook.cs" />
+    <Compile Include="Assets\Common\DLAssets\Cinemachine\Base\Runtime\Behaviours\CinemachineMixingCamera.cs" />
+    <Compile Include="Assets\Common\DLAssets\Cinemachine\Base\Runtime\Behaviours\CinemachinePath.cs" />
+    <Compile Include="Assets\Common\DLAssets\Cinemachine\Base\Runtime\Behaviours\CinemachinePipeline.cs" />
+    <Compile Include="Assets\Common\DLAssets\Cinemachine\Base\Runtime\Behaviours\CinemachineSmoother.cs" />
+    <Compile Include="Assets\Common\DLAssets\Cinemachine\Base\Runtime\Behaviours\CinemachineSmoothPath.cs" />
+    <Compile Include="Assets\Common\DLAssets\Cinemachine\Base\Runtime\Behaviours\CinemachineStateDrivenCamera.cs" />
+    <Compile Include="Assets\Common\DLAssets\Cinemachine\Base\Runtime\Behaviours\CinemachineTargetGroup.cs" />
+    <Compile Include="Assets\Common\DLAssets\Cinemachine\Base\Runtime\Behaviours\CinemachineVirtualCamera.cs" />
+    <Compile Include="Assets\Common\DLAssets\Cinemachine\Base\Runtime\Components\CinemachineBasicMultiChannelPerlin.cs" />
+    <Compile Include="Assets\Common\DLAssets\Cinemachine\Base\Runtime\Components\CinemachineComposer.cs" />
+    <Compile Include="Assets\Common\DLAssets\Cinemachine\Base\Runtime\Components\CinemachineFramingTransposer.cs" />
+    <Compile Include="Assets\Common\DLAssets\Cinemachine\Base\Runtime\Components\CinemachineGroupComposer.cs" />
+    <Compile Include="Assets\Common\DLAssets\Cinemachine\Base\Runtime\Components\CinemachineHardLockToTarget.cs" />
+    <Compile Include="Assets\Common\DLAssets\Cinemachine\Base\Runtime\Components\CinemachineHardLookAt.cs" />
+    <Compile Include="Assets\Common\DLAssets\Cinemachine\Base\Runtime\Components\CinemachineOrbitalTransposer.cs" />
+    <Compile Include="Assets\Common\DLAssets\Cinemachine\Base\Runtime\Components\CinemachinePOV.cs" />
+    <Compile Include="Assets\Common\DLAssets\Cinemachine\Base\Runtime\Components\CinemachineSameAsFollowObject.cs" />
+    <Compile Include="Assets\Common\DLAssets\Cinemachine\Base\Runtime\Components\CinemachineTrackedDolly.cs" />
+    <Compile Include="Assets\Common\DLAssets\Cinemachine\Base\Runtime\Components\CinemachineTransposer.cs" />
+    <Compile Include="Assets\Common\DLAssets\Cinemachine\Base\Runtime\Core\AxisState.cs" />
+    <Compile Include="Assets\Common\DLAssets\Cinemachine\Base\Runtime\Core\CameraState.cs" />
+    <Compile Include="Assets\Common\DLAssets\Cinemachine\Base\Runtime\Core\CinemachineBlend.cs" />
+    <Compile Include="Assets\Common\DLAssets\Cinemachine\Base\Runtime\Core\CinemachineBlenderSettings.cs" />
+    <Compile Include="Assets\Common\DLAssets\Cinemachine\Base\Runtime\Core\CinemachineComponentBase.cs" />
+    <Compile Include="Assets\Common\DLAssets\Cinemachine\Base\Runtime\Core\CinemachineCore.cs" />
+    <Compile Include="Assets\Common\DLAssets\Cinemachine\Base\Runtime\Core\CinemachineDebugLogger.cs" />
+    <Compile Include="Assets\Common\DLAssets\Cinemachine\Base\Runtime\Core\CinemachineExtension.cs" />
+    <Compile Include="Assets\Common\DLAssets\Cinemachine\Base\Runtime\Core\CinemachinePathBase.cs" />
+    <Compile Include="Assets\Common\DLAssets\Cinemachine\Base\Runtime\Core\CinemachinePropertyAttribute.cs" />
+    <Compile Include="Assets\Common\DLAssets\Cinemachine\Base\Runtime\Core\CinemachineVirtualCameraBase.cs" />
+    <Compile Include="Assets\Common\DLAssets\Cinemachine\Base\Runtime\Core\GaussianFilter.cs" />
+    <Compile Include="Assets\Common\DLAssets\Cinemachine\Base\Runtime\Core\ICinemachineCamera.cs" />
+    <Compile Include="Assets\Common\DLAssets\Cinemachine\Base\Runtime\Core\ICinemachineComponent.cs" />
+    <Compile Include="Assets\Common\DLAssets\Cinemachine\Base\Runtime\Core\LensSettings.cs" />
+    <Compile Include="Assets\Common\DLAssets\Cinemachine\Base\Runtime\Core\NoiseSettings.cs" />
+    <Compile Include="Assets\Common\DLAssets\Cinemachine\Base\Runtime\Core\Predictor.cs" />
+    <Compile Include="Assets\Common\DLAssets\Cinemachine\Base\Runtime\Core\ReflectionHelpers.cs" />
+    <Compile Include="Assets\Common\DLAssets\Cinemachine\Base\Runtime\Core\SplineHelpers.cs" />
+    <Compile Include="Assets\Common\DLAssets\Cinemachine\Base\Runtime\Core\UnityVectorExtensions.cs" />
+    <Compile Include="Assets\Common\DLAssets\FadeManager\naichilab\FadeManager\Sample\FadeSample.cs" />
+    <Compile Include="Assets\Common\DLAssets\FadeManager\naichilab\FadeManager\Scripts\FadeManager.cs" />
     <Compile Include="Assets\Common\Scripts\SceneController.cs" />
-    <Compile Include="Assets\FadeManager\naichilab\FadeManager\Sample\FadeSample.cs" />
-    <Compile Include="Assets\FadeManager\naichilab\FadeManager\Scripts\FadeManager.cs" />
-    <Compile Include="Assets\GameScene\GameScene.cs" />
+    <Compile Include="Assets\GameScene\Script\CameraMover.cs" />
+    <Compile Include="Assets\GameScene\Script\ChangeTextureObject.cs" />
+    <Compile Include="Assets\GameScene\Script\GameData.cs" />
+    <Compile Include="Assets\GameScene\Script\Meteo.cs" />
+    <Compile Include="Assets\GameScene\Script\ShapeChanger.cs" />
+    <Compile Include="Assets\GameScene\Script\SpeedRing.cs" />
+    <Compile Include="Assets\GameScene\Script\StageObject.cs" />
+    <Compile Include="Assets\GameScene\Script\StarMover.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\GetSetAttribute.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\MinAttribute.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\TrackballAttribute.cs" />
@@ -408,15 +415,17 @@
     <Compile Include="Assets\SelectScene\Scripts\ZoomController.cs" />
     <Compile Include="Assets\StartMove\Scripts\PlayerController.cs" />
     <Compile Include="Assets\StartMove\Scripts\VCameraController.cs" />
+    <Compile Include="Assets\Test\BGMove.cs" />
+    <Compile Include="Assets\Test\PlayerMove.cs" />
     <Compile Include="Assets\TitleScene\Scripts\StarController.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Cinemachine\ReleaseNotes.txt" />
-    <None Include="Assets\Plugins\UniRx\Examples\UniRx.Examples.asmdef" />
-    <None Include="Assets\Plugins\UniRx\ReadMe.txt" />
-    <None Include="Assets\Plugins\UniRx\Scripts\Async\Editor\UniRx.Async.Editor.asmdef" />
-    <None Include="Assets\Plugins\UniRx\Scripts\Async\UniRx.Async.asmdef" />
-    <None Include="Assets\Plugins\UniRx\Scripts\UniRx.asmdef" />
+    <None Include="Assets\Common\DLAssets\Cinemachine\ReleaseNotes.txt" />
+    <None Include="Assets\Common\DLAssets\Plugins\UniRx\Examples\UniRx.Examples.asmdef" />
+    <None Include="Assets\Common\DLAssets\Plugins\UniRx\ReadMe.txt" />
+    <None Include="Assets\Common\DLAssets\Plugins\UniRx\Scripts\Async\Editor\UniRx.Async.Editor.asmdef" />
+    <None Include="Assets\Common\DLAssets\Plugins\UniRx\Scripts\Async\UniRx.Async.asmdef" />
+    <None Include="Assets\Common\DLAssets\Plugins\UniRx\Scripts\UniRx.asmdef" />
     <None Include="Assets\PostProcessing\Editor Resources\Monitors\HistogramCompute.compute" />
     <None Include="Assets\PostProcessing\Editor Resources\Monitors\HistogramRender.shader" />
     <None Include="Assets\PostProcessing\Editor Resources\Monitors\ParadeRender.shader" />
