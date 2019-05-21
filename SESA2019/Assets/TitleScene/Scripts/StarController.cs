@@ -28,7 +28,7 @@ public class StarController : MonoBehaviour
             action = Fall;            
         }
 
-        Move(action);       
+        Move(action);
     }
 
     private void Move(UnityAction callback)
