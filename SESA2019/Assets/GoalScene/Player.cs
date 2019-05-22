@@ -7,12 +7,14 @@ public class Player : MonoBehaviour
 {
     [SerializeField] ParticleSystem sparkle;
     [SerializeField] Transform target;
+    [SerializeField] float actionSecond;
     private UnityAction action;
 
     // Use this for initialization
     void Start ()
     {
         action = NoneAction;
+        actionSecond *= 60.0f;
 	}
 	
 	// Update is called once per frame
@@ -47,7 +49,7 @@ public class Player : MonoBehaviour
         // ターゲットに向けて移動する
         Vector3 currentPos = transform.position; // 現在の座標
         Vector3 targetPos = target.position;     // ターゲットの座標
-        Vector3 move = Vector3.MoveTowards(currentPos, targetPos, 0.5f); // 移動距離
+        Vector3 move = Vector3.Slerp(currentPos, targetPos, 1.0f / actionSecond); // 移動距離
         transform.position = move;
 
         // ターゲットの座標に到着したら
@@ -57,15 +59,15 @@ public class Player : MonoBehaviour
     private void GradualSmaller()
     {
         if (IsMinusVector(transform.localScale)) return;
-        Vector3 scale = new Vector3(0.015f, 0.015f, 0.015f);
-        transform.localScale -= scale;
+        float shrink = 1.0f / actionSecond;
+        transform.localScale -= new Vector3(shrink, shrink, shrink);
     }
 
     private void Shine()
     {
         if (sparkle.isPlaying) return;
         sparkle.Play();
-        action = ChangeScene;
+        //action = ChangeScene;
     }
 
     private void ChangeScene()

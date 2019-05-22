@@ -2065,6 +2065,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 198669625337718546, guid: cc6a123ad7469bc48844601ae9bd8f00,
+        type: 2}
+      propertyPath: useRigidbodyForVelocity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198669625337718546, guid: cc6a123ad7469bc48844601ae9bd8f00,
+        type: 2}
+      propertyPath: randomSeed
+      value: -1677149694
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cc6a123ad7469bc48844601ae9bd8f00, type: 2}
   m_IsPrefabParent: 0

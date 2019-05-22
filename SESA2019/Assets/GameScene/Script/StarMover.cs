@@ -31,7 +31,8 @@ public class StarMover : StageObject
     [SerializeField] private float _accelPower;     // 加速時にかかる力
 
     // ジャンプ
-    private int _jampTime;                         // ジャンプの残り対空時間
+    [SerializeField]private bool _jampAble;                         // ジャンプ可能か
+    private int  _jampTime;                         // ジャンプの残り対空時間
     [SerializeField] private Vector2 _jampPower;   // ジャンプの力
     [SerializeField] private int     _maxJampTime; // ジャンプの対空時間の最大値
     
@@ -71,6 +72,7 @@ public class StarMover : StageObject
         _isStick              = false;
         _poseTime             = 0;
         _groundState          = KoroKoro;
+        _jampAble             = false;
     }
 
 
@@ -81,7 +83,7 @@ public class StarMover : StageObject
     {
         ChangeCollider(+1, _selectedStarCollider < _shapeChanger.ShapeId());
         ChangeCollider(-1, _selectedStarCollider > _shapeChanger.ShapeId());
-        Jamp(_shapeChanger.Jamp());
+        //Jamp(_shapeChanger.Jamp());
     }
 
 
@@ -112,9 +114,21 @@ public class StarMover : StageObject
             changeAlpha(_noDamageAlpha);
         }
 
+        --_jampTime;
+
+        // ジャンプ中の処理
+        if (_jampTime >= 0)
+        {
+            _rgdb.angularVelocity = 0;
+            if (_jampTime == 0)
+            {
+                _rgdb.velocity = Vector2.zero;
+            }
+            _rgdb.gravityScale = 0;
+        }
 
         // 刺さっているときの処理
-        if (_stickerNum > 0 && _isStick)
+        else if (_stickerNum > 0 && _isStick)
         {
             _rgdb.gravityScale = 0;
 
@@ -134,41 +148,27 @@ public class StarMover : StageObject
         // 刺さってないときの処理
         else
         {
-            --_jampTime;
+            _rgdb.gravityScale = _defaultGravity;
 
-            if (_jampTime < 0)
+            // 加減速
+            if (_selectedStarCollider == _groundState)
             {
-                _rgdb.gravityScale = _defaultGravity;
-
-                // 加減速
-                if(_selectedStarCollider == _groundState)
+                if (_rgdb.velocity.magnitude > _slowSpeed)
                 {
-                    if (_rgdb.velocity.magnitude > _slowSpeed)
-                    {
-                        var sp = (_rgdb.velocity.magnitude + _slowSpeed) / 2;
-                        _rgdb.velocity = sp * _rgdb.velocity.normalized;
-                    }
-                }
-                else if (_selectedStarCollider == _wideColliderId && _rgdb.velocity.x > 0)
-                {
-                    _rgdb.AddForce(new Vector2(_accelPower, 0));
-                }
-
-                // 最高速度の調整
-                var maxS = _selectedStarCollider == _wideColliderId ? _wideMaxSpeed : _maxSpeed;
-                if (_rgdb.velocity.magnitude > maxS)
-                {
-                    _rgdb.velocity = maxS * _rgdb.velocity.normalized;
+                    var sp = (_rgdb.velocity.magnitude + _slowSpeed) / 2;
+                    _rgdb.velocity = sp * _rgdb.velocity.normalized;
                 }
             }
-            else // ジャンプ中
+            else if (_selectedStarCollider == _wideColliderId && _rgdb.velocity.x > 0)
             {
-                _rgdb.angularVelocity = 0;
-                if (_jampTime == 0)
-                {
-                    _rgdb.velocity=Vector2.zero;
-                }
-                _rgdb.gravityScale = 0;
+                _rgdb.AddForce(new Vector2(_accelPower, 0));
+            }
+
+            // 最高速度の調整
+            var maxS = _selectedStarCollider == _wideColliderId ? _wideMaxSpeed : _maxSpeed;
+            if (_rgdb.velocity.magnitude > maxS)
+            {
+                _rgdb.velocity = maxS * _rgdb.velocity.normalized;
             }
         }
         
@@ -184,8 +184,17 @@ public class StarMover : StageObject
     }
 
 
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.tag.Equals("Ground"))
+        {
+            _jampAble = true;
+        }
+    }
+
+
     /// <summary>
-    /// 衝突時の処理
+    /// 衝突時の処理(Trigger)
     /// </summary>
     /// <param name="col"></param>
     private void OnTriggerEnter2D(Collider2D col)
@@ -193,7 +202,7 @@ public class StarMover : StageObject
         if (col.tag.Equals("Sticker"))
         {
             ++_stickerNum;
-
+            _jampAble = true;
             _stickerCenter = col.transform.position;
         }
 
@@ -219,11 +228,6 @@ public class StarMover : StageObject
         if (col.tag.Equals("BetaBeta"))
         {
             _groundState = BetaBeta;
-        }
-
-        if(col.tag.Equals("Finish"))
-        {
-            SceneController.Instance.ChangeScene("GoalScene", 0.0f);
         }
     }
 
@@ -268,6 +272,7 @@ public class StarMover : StageObject
         if (_selectedStarCollider == _sharpColliderId)
         {
             _isStick = true;
+            Jamp(true);
         }
         if (_selectedStarCollider != _sharpColliderId)
         {
@@ -282,11 +287,12 @@ public class StarMover : StageObject
     /// <param name="able"> ジャンプ可能か </param>
     private void Jamp(bool able)
     {
-        if (!able)
+        if (!able || !_jampAble)
         {
             return;
         }
 
+        _jampAble          = false;
         _rgdb.velocity     = _jampPower;
         _rgdb.gravityScale = 0;
         _jampTime          = _maxJampTime;
