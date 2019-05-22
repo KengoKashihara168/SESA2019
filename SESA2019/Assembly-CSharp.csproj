@@ -51,7 +51,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\BGMove.cs" />
      <Compile Include="Assets\Common\DLAssets\Cinemachine\Base\Runtime\Behaviours\CinemachineBlendListCamera.cs" />
      <Compile Include="Assets\Common\DLAssets\Cinemachine\Base\Runtime\Behaviours\CinemachineBrain.cs" />
      <Compile Include="Assets\Common\DLAssets\Cinemachine\Base\Runtime\Behaviours\CinemachineClearShot.cs" />
@@ -163,6 +162,8 @@
      <Compile Include="Assets\SelectScene\Scripts\ZoomController.cs" />
      <Compile Include="Assets\StartMove\Scripts\PlayerController.cs" />
      <Compile Include="Assets\StartMove\Scripts\VCameraController.cs" />
+     <Compile Include="Assets\Test\BGMove.cs" />
+     <Compile Include="Assets\Test\PlayerMove.cs" />
      <Compile Include="Assets\TitleScene\Scripts\StarController.cs" />
      <None Include="Assets\PostProcessing\Resources\Shaders\DepthOfField.shader" />
      <None Include="Assets\PostProcessing\Resources\Shaders\MotionBlur.cginc" />
