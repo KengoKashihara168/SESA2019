@@ -65,6 +65,12 @@ public class Player : MonoBehaviour
     {
         if (sparkle.isPlaying) return;
         sparkle.Play();
+        action = ChangeScene;
+    }
+
+    private void ChangeScene()
+    {
+        SceneController.Instance.ChangeScene("SelectScene", 1.0f);
         action = NoneAction;
     }
 

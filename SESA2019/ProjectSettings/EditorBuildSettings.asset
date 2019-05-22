@@ -17,3 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/GameScene/Scene/GameScene.unity
     guid: 62af7cf4510aae5429e737e97450ff26
+  - enabled: 1
+    path: Assets/GoalScene/GoalScene.unity
+    guid: 6a4ff29d594f8de4caee25bffc6787e8
