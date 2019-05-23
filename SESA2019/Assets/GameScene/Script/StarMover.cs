@@ -229,6 +229,11 @@ public class StarMover : StageObject
         {
             _groundState = BetaBeta;
         }
+
+        if(col.tag.Equals("Finish"))
+        {
+            SceneController.Instance.ChangeScene("GoalScene", 0.0f);
+        }
     }
 
 
