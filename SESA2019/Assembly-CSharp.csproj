@@ -110,6 +110,9 @@
      <Compile Include="Assets\GameScene\Script\SpeedRing.cs" />
      <Compile Include="Assets\GameScene\Script\StageObject.cs" />
      <Compile Include="Assets\GameScene\Script\StarMover.cs" />
+     <Compile Include="Assets\GameScene\TimeCount.cs" />
+     <Compile Include="Assets\GoalScene\PlayerAction.cs" />
+     <Compile Include="Assets\GoalScene\PlayerScale.cs" />
      <Compile Include="Assets\PostProcessing\Runtime\Attributes\GetSetAttribute.cs" />
      <Compile Include="Assets\PostProcessing\Runtime\Attributes\MinAttribute.cs" />
      <Compile Include="Assets\PostProcessing\Runtime\Attributes\TrackballAttribute.cs" />
