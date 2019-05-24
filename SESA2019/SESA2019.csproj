@@ -364,7 +364,7 @@
     <Compile Include="Assets\GameScene\Script\StageObject.cs" />
     <Compile Include="Assets\GameScene\Script\StarMover.cs" />
     <Compile Include="Assets\GameScene\TimeCount.cs" />
-    <Compile Include="Assets\GoalScene\Player.cs" />
+    <Compile Include="Assets\GoalScene\GoalController.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\GetSetAttribute.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\MinAttribute.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\TrackballAttribute.cs" />
