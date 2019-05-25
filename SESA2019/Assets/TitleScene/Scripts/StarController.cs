@@ -7,6 +7,7 @@ using UniRx.Triggers;
 
 public class StarController : MonoBehaviour
 {
+    [SerializeField] AudioSource startSE;
     float moveY;
     float gravity;
     UnityAction action;
@@ -25,7 +26,8 @@ public class StarController : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            action = Fall;            
+            action = Fall;
+            startSE.Play();
         }
 
         Move(action);

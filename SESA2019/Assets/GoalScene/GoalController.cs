@@ -63,6 +63,7 @@ public class GoalController : MonoBehaviour
     private void PlayEffect()
     {        
         sparkle.Play();
+        sparkle.GetComponent<AudioSource>().Play();
         StartCoroutine(IsChange());
     }
 
