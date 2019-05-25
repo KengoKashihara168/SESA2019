@@ -51,6 +51,8 @@ public class StageData : MonoBehaviour
         // 画像を大きくする
         Vector2 extend = new Vector2(20.0f, 20.0f);
         rect.sizeDelta += extend;
+        // セレクト音の再生
+        GetComponent<AudioSource>().Play();
     }
 
     // 設定のクリア

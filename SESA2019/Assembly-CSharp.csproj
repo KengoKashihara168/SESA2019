@@ -162,8 +162,10 @@
      <Compile Include="Assets\SelectScene\Scripts\StageData.cs" />
      <Compile Include="Assets\SelectScene\Scripts\StarEffectController.cs" />
      <Compile Include="Assets\SelectScene\Scripts\ZoomController.cs" />
-     <Compile Include="Assets\StartMove\Scripts\PlayerController.cs" />
-     <Compile Include="Assets\StartMove\Scripts\VCameraController.cs" />
+     <Compile Include="Assets\StartScene\Scripts\EffectSE.cs" />
+     <Compile Include="Assets\StartScene\Scripts\FloorSE.cs" />
+     <Compile Include="Assets\StartScene\Scripts\PlayerController.cs" />
+     <Compile Include="Assets\StartScene\Scripts\VCameraController.cs" />
      <Compile Include="Assets\Test\BGMove.cs" />
      <Compile Include="Assets\Test\PlayerMove.cs" />
      <Compile Include="Assets\TitleScene\Scripts\StarController.cs" />

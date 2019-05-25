@@ -2,7 +2,7 @@ WindowsStandalone
 SceneListBegin?
 Assets/TitleScene/TitleScene.unity
 Assets/SelectScene/SelectScene.unity
-Assets/StartMove/StartScene.unity
+Assets/StartScene/StartScene.unity
 Assets/GameScene/Scene/GameScene.unity
 Assets/GoalScene/GoalScene.unity
 SceneListEnd?
@@ -134,7 +134,6 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 05524b8f659e7bfe5756d1335fec24ba UniRx.dll:UniRx.Triggers.ObservableEndDragTrigger
 05524b8f659e7bfe5756d1335fec24ba UniRx.dll:UniRx.Triggers.ObservableLateUpdateTrigger
 acbc5cb550fd73551fc3f7462a1c830c Assembly-CSharp.dll:Cinemachine.NoiseSettings
-30b4f5422996054540d34a8e9a6d59fa Assembly-CSharp.dll:.Player
 322cb40e1e282f28af980cbef7922a90 UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsEventTracker
 dc07d7ad69b399a46e92c483bf1c04ca UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsTracker
 1ecf906000db888ae6db1252a7be9bf3 Assembly-CSharp.dll:.VCameraController
@@ -166,6 +165,7 @@ c261e943c1efad142d715ca930c9b7c6 Assembly-CSharp.dll:Cinemachine.CinemachineComp
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.Editor.Placeholder
 253aa7c97d0743cc9b91d5116db69272 Assembly-CSharp.dll:Cinemachine.CinemachineDollyCart
 c3b726e1ef77ecefcf78c4586a6bf32e Assembly-CSharp.dll:Cinemachine.CinemachineTrackedDolly
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.TimeCount
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Cinemachine.CinemachinePipeline
 1d0ed45a65af4d08065a79ace88b43fc Assembly-CSharp.dll:Cinemachine.CinemachinePath
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.SelectIconController
@@ -209,6 +209,7 @@ d9ae8c6401801a4a88651871144fd209 Assembly-CSharp.dll:Cinemachine.CinemachineBlen
 e0f7ffd5d5c2abe4b2e16569a21163da UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioRoom
 05524b8f659e7bfe5756d1335fec24ba UniRx.dll:UniRx.Triggers.ObservablePointerUpTrigger
 e0f7ffd5d5c2abe4b2e16569a21163da UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioRoom
+2e2c59aac7c954fd29566ed116fae7f8 Assembly-CSharp.dll:.GoalController
 05524b8f659e7bfe5756d1335fec24ba UniRx.dll:UniRx.Triggers.ObservableCollision2DTrigger
 0fcbcbd9afa80c74caef99e7ba749bb0 Assembly-CSharp.dll:Cinemachine.CinemachineCollider
 0f54a2b60c93ab3dd560d125a2b60197 Assembly-CSharp.dll:Cinemachine.CinemachineBlenderSettings
@@ -243,4 +244,5 @@ dcd416e9d953d619b92c934b99da5981 Assembly-CSharp.dll:.StarMover
 05524b8f659e7bfe5756d1335fec24ba UniRx.Examples.dll:UniRx.Examples.Sample06_ConvertToCoroutine
 9dd74a41363b134db6b934985dfd2f92 Assembly-CSharp.dll:Cinemachine.CinemachineClearShot
 05524b8f659e7bfe5756d1335fec24ba UniRx.Examples.dll:UniRx.Examples.Sample08_DetectDoubleClick
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.TimelinePlayableAsset
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.FloorSE
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.EffectSE

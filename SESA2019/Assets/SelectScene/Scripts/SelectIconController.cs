@@ -11,7 +11,6 @@ public class SelectIconController : MonoBehaviour
 	void Start ()
     {
         GameObject stage = GameObject.Find("Stage1");
-        transform.position = stage.transform.position;
         transform.SetParent(stage.transform);
         moveEffect = transform.GetChild(0);
 	}

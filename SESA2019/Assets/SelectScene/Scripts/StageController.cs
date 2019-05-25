@@ -7,6 +7,7 @@ public class StageController : MonoBehaviour
 {
     [SerializeField] Image[] stage;    // ステージ
     [SerializeField] Button  describe; // 説明テキスト
+    GameObject selectIcon;
     bool changeFlag;
 
 	// Use this for initialization
@@ -20,7 +21,8 @@ public class StageController : MonoBehaviour
         }
         // 説明テキストを非表示にする
         describe.GetComponent<Image>().color = Color.clear;
-
+        selectIcon = GameObject.Find("SelectIcon");
+        SetDescribeImage(selectIcon.transform.parent.GetComponent<StageData>().textImage);
         changeFlag = false;
     }
 	
@@ -38,9 +40,7 @@ public class StageController : MonoBehaviour
                     Select(stage[i]);
                     break;
                 }
-            }
-
-            
+            }            
         }
     }
 
@@ -53,10 +53,10 @@ public class StageController : MonoBehaviour
         }
     }
 
-    void Select(Image stage)
+    private void Select(Image stage)
     {
         if (stage.GetComponent<StageData>().GetFlag()) // 既に選択されていたら
-        {
+        {            
             // 選択されているステージに遷移
             SceneTransition();
             //GetComponent<ZoomController>().Zoom(selectStage.transform);
@@ -64,8 +64,7 @@ public class StageController : MonoBehaviour
         else
         {
             // ステージを選択する
-            StageReset();
-            GameObject selectIcon = GameObject.Find("SelectIcon");
+            StageReset();            
             selectIcon.GetComponent<SelectIconController>().Migrate(stage);
             stage.GetComponent<StageData>().Selected();
         }
@@ -84,6 +83,8 @@ public class StageController : MonoBehaviour
     public void SceneTransition()
     {
         if (changeFlag) return;
+        // 決定音の再生
+        GetComponent<AudioSource>().Play();
         SceneController.Instance.ChangeScene("StartScene", 1.0f);
         changeFlag = false;
     }
