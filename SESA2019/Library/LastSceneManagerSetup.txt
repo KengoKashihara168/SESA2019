@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/SelectScene/SelectScene.unity
+- path: Assets/Test/BackGroundTest.unity
   isLoaded: 1
   isActive: 1

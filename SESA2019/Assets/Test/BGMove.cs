@@ -30,7 +30,7 @@ public class BGMove : MonoBehaviour
         {
             Vector3 nextPos = transform.position;
             nextPos.x += backGroundWidth;
-            Instantiate(gameObject, nextPos, Quaternion.identity);            
+            Instantiate(gameObject, nextPos,gameObject.transform.rotation);            
         }
     }
 }
