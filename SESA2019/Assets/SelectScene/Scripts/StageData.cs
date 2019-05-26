@@ -49,7 +49,7 @@ public class StageData : MonoBehaviour
         // フラグを立てる
         checkFlag = true;
         // 画像を大きくする
-        Vector2 extend = new Vector2(20.0f, 20.0f);
+        Vector2 extend = new Vector2(0.5f, 0.5f);
         rect.sizeDelta += extend;
         // セレクト音の再生
         GetComponent<AudioSource>().Play();

@@ -5,32 +5,32 @@ using UnityEngine.UI;
 
 public class SelectIconController : MonoBehaviour
 {
-    Transform moveEffect;
+    Transform stageTransform;
 
 	// Use this for initialization
 	void Start ()
     {
-        GameObject stage = GameObject.Find("Stage1");
-        transform.SetParent(stage.transform);
-        moveEffect = transform.GetChild(0);
-	}
+        stageTransform = GameObject.Find("Stage1").transform;
+        //transform.SetParent(stage.transform);
+        transform.GetChild(0).GetComponent<StarEffectController>().Play(!IsReach());
+    }
 	
 	// Update is called once per frame
 	void Update ()
     {              
         Move();
-        moveEffect.GetComponent<StarEffectController>().Play(!IsReach());
     }
 
     public void Migrate(Image nextStage)
     {
-        transform.SetParent(nextStage.transform);
+        //transform.SetParent(nextStage.transform);
+        stageTransform = nextStage.transform;
     }
 
     void Move()
     {
         Vector2 from = transform.position;
-        Vector2 to = transform.parent.transform.position;
+        Vector2 to = stageTransform.position;
         transform.position = Vector2.Lerp(from, to, 0.05f);        
     }
 
@@ -43,8 +43,13 @@ public class SelectIconController : MonoBehaviour
     float ParentDistance()
     {
         Vector2 from = transform.position;
-        Vector2 to = transform.parent.transform.position;
+        Vector2 to = stageTransform.position;
         Vector2 distance = to - from;
         return distance.magnitude;
+    }
+
+    public Sprite GetTargetTextImage()
+    {
+        return stageTransform.gameObject.GetComponent<StageData>().textImage;
     }
 }

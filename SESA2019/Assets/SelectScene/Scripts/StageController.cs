@@ -22,7 +22,7 @@ public class StageController : MonoBehaviour
         // 説明テキストを非表示にする
         describe.GetComponent<Image>().color = Color.clear;
         selectIcon = GameObject.Find("SelectIcon");
-        SetDescribeImage(selectIcon.transform.parent.GetComponent<StageData>().textImage);
+        SetDescribeImage(selectIcon.GetComponent<SelectIconController>().GetTargetTextImage());
         changeFlag = false;
     }
 	
