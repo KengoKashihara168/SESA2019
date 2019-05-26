@@ -5,11 +5,14 @@ using UnityEngine.UI;
 
 public class SelectIconController : MonoBehaviour
 {
-    Transform stageTransform;
+    [SerializeField] float moveSpeed;
+    private float time;
+    private Transform stageTransform;
 
 	// Use this for initialization
 	void Start ()
     {
+        time = 0.0f;
         stageTransform = GameObject.Find("Stage1").transform;
         //transform.SetParent(stage.transform);
         transform.GetChild(0).GetComponent<StarEffectController>().Play(!IsReach());
@@ -31,7 +34,8 @@ public class SelectIconController : MonoBehaviour
     {
         Vector2 from = transform.position;
         Vector2 to = stageTransform.position;
-        transform.position = Vector2.Lerp(from, to, 0.05f);        
+        time = 1.0f / moveSpeed;
+        transform.position = Vector2.Lerp(from, to, time);
     }
 
     bool IsReach()

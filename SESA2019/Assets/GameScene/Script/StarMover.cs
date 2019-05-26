@@ -43,10 +43,12 @@ public class StarMover : StageObject
     private int         _damageTime;        // ダメージを受けたときの無敵時間
     private const float _noDamageAlpha = 1; // 無敵でないときアルファ値 
     private int         _poseTime;
-    [SerializeField] private int                  _maxDamageTime; // 無敵時間の最大値
-    [SerializeField] private float                _damageAlpha;   // 無敵中のアルファ値
-    [SerializeField] private List<SpriteRenderer> _spriteList;    // 星形ごとのSpriteRenderer
-    [SerializeField] private int                  _poseMaxTime;   // ポーズ時間
+    [SerializeField] private int                  _maxDamageTime;      // 無敵時間の最大値
+    [SerializeField] private float                _damageAlpha;        // 無敵中のアルファ値
+    [SerializeField] private List<SpriteRenderer> _spriteRendererList; // 星形ごとのSpriteRenderer
+    [SerializeField] private List<Sprite>         _noDamageSprite;     // ダメージなしのSprite
+    [SerializeField] private List<Sprite>         _damageSprite;       // ダメージをうけたときのSprite
+    [SerializeField] private int                  _poseMaxTime;        // ポーズ時間
 
     // 床の状態での減速
     private const int KoroKoro   = -1; // ころころ (減速 なし)
@@ -55,6 +57,10 @@ public class StarMover : StageObject
     private int _groundState; // 床の状態
     [SerializeField] private float _slowSpeed;   // 減速時のスピード
 
+    // 顔
+    [SerializeField] private Sprite         _normalFaceSprite;   // 普通の顔のSprite
+    [SerializeField] private Sprite         _sadFaceSprite;      // 悲しい顔のSprite
+    [SerializeField] private SpriteRenderer _faceSpriteRenderer; // 顔のSpriteRenderer
 
     // デバッグ
     [SerializeField]
@@ -111,7 +117,12 @@ public class StarMover : StageObject
 
         if (--_damageTime < 0)
         {
+            _faceSpriteRenderer.sprite = _normalFaceSprite;
             changeAlpha(_noDamageAlpha);
+        }
+        else
+        {
+            _faceSpriteRenderer.sprite = _sadFaceSprite;
         }
 
         --_jampTime;
@@ -216,8 +227,10 @@ public class StarMover : StageObject
         if (col.tag.Equals("Enemy") && _damageTime < 0)
         {
             _damageTime = _maxDamageTime;
+            changeSprite(_damageSprite);
             changeAlpha(_damageAlpha);
             GameData.Instance().Pose();
+            _faceSpriteRenderer.sprite = _sadFaceSprite;
         }
 
         if (col.tag.Equals("TsuruTsuru"))
@@ -230,7 +243,7 @@ public class StarMover : StageObject
             _groundState = BetaBeta;
         }
 
-        if(col.tag.Equals("Finish"))
+        if (col.tag.Equals("Finish"))
         {
             SceneController.Instance.ChangeScene("GoalScene", 0.0f);
         }
@@ -304,12 +317,24 @@ public class StarMover : StageObject
     }
 
     /// <summary>
+    /// Spriteを変更します
+    /// </summary>
+    /// <param name="spriteList"></param>
+    private void changeSprite(List<Sprite> spriteList)
+    {
+        for (int i = 0; i < 3; ++i)
+        {
+            _spriteRendererList[i].sprite = spriteList[i];
+        }
+    }
+
+    /// <summary>
     /// アルファ値の変更
     /// </summary>
     /// <param name="a"> 変更後のアルファ値 </param>
     private void changeAlpha(float a)
     {
-        foreach(var sprite in _spriteList)
+        foreach(var sprite in _spriteRendererList)
         {
             sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, a);
         }

@@ -101,6 +101,7 @@
      <Compile Include="Assets\Common\DLAssets\Cinemachine\Base\Runtime\Core\UnityVectorExtensions.cs" />
      <Compile Include="Assets\Common\DLAssets\FadeManager\naichilab\FadeManager\Sample\FadeSample.cs" />
      <Compile Include="Assets\Common\DLAssets\FadeManager\naichilab\FadeManager\Scripts\FadeManager.cs" />
+     <Compile Include="Assets\Common\Scripts\Goal.cs" />
      <Compile Include="Assets\Common\Scripts\SceneController.cs" />
      <Compile Include="Assets\GameScene\Script\CameraMover.cs" />
      <Compile Include="Assets\GameScene\Script\ChangeTextureObject.cs" />
@@ -110,7 +111,6 @@
      <Compile Include="Assets\GameScene\Script\SpeedRing.cs" />
      <Compile Include="Assets\GameScene\Script\StageObject.cs" />
      <Compile Include="Assets\GameScene\Script\StarMover.cs" />
-     <Compile Include="Assets\GameScene\TimeCount.cs" />
      <Compile Include="Assets\GoalScene\GoalController.cs" />
      <Compile Include="Assets\PostProcessing\Runtime\Attributes\GetSetAttribute.cs" />
      <Compile Include="Assets\PostProcessing\Runtime\Attributes\MinAttribute.cs" />
