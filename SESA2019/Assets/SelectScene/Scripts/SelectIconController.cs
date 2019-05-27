@@ -15,7 +15,7 @@ public class SelectIconController : MonoBehaviour
         time = 0.0f;
         stageTransform = GameObject.Find("Stage1").transform;
         //transform.SetParent(stage.transform);
-        transform.GetChild(0).GetComponent<StarEffectController>().Play(!IsReach());
+        transform.GetChild(1).GetComponent<StarEffectController>().Play(!IsReach());
     }
 	
 	// Update is called once per frame

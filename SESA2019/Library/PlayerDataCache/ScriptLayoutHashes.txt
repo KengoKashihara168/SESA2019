@@ -1,4 +1,4 @@
-WindowsStandalone
+OSXStandalone
 SceneListBegin?
 Assets/TitleScene/TitleScene.unity
 Assets/SelectScene/SelectScene.unity
@@ -28,6 +28,7 @@ df374c01140c2d578bf70cbd60073d1d UnityEngine.Timeline.dll:UnityEngine.Timeline.T
 4c75752238fd236ce350bb4f9dc2936d Assembly-CSharp.dll:Cinemachine.CinemachineFollowZoom
 05524b8f659e7bfe5756d1335fec24ba UniRx.dll:UniRx.Triggers.ObservableUpdateTrigger
 05524b8f659e7bfe5756d1335fec24ba UniRx.dll:UniRx.Triggers.ObservableVisibleTrigger
+edc45978676597aec8b0f6e32c334667 Assembly-CSharp.dll:.Face
 a35dc9cca2faebc5f5f1aeb9e8e47bbe UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
 49cd62a578efc0a599b810a2b66cd49c UnityEngine.UI.dll:UnityEngine.UI.Button
@@ -130,7 +131,7 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 05524b8f659e7bfe5756d1335fec24ba UniRx.dll:UniRx.Triggers.ObservableUpdateSelectedTrigger
 05524b8f659e7bfe5756d1335fec24ba UniRx.dll:UniRx.Triggers.ObservableScrollTrigger
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.PlayerController
+d58ab03d0d0530939b6f6c3b415ffc20 Assembly-CSharp.dll:.PlayerController
 05524b8f659e7bfe5756d1335fec24ba UniRx.dll:UniRx.Triggers.ObservableEndDragTrigger
 05524b8f659e7bfe5756d1335fec24ba UniRx.dll:UniRx.Triggers.ObservableLateUpdateTrigger
 acbc5cb550fd73551fc3f7462a1c830c Assembly-CSharp.dll:Cinemachine.NoiseSettings
@@ -147,6 +148,7 @@ c2f5bd5aace4cfb8a0312a55f5d22870 Assembly-CSharp.dll:.Meteo
 fe460ef6985517d84e68664be1e7af5b Assembly-CSharp.dll:Cinemachine.CinemachineFramingTransposer
 05524b8f659e7bfe5756d1335fec24ba UniRx.dll:UniRx.Triggers.ObservablePointerExitTrigger
 dcbe621d6d7b45141e5d64017ad0620b Assembly-CSharp.dll:.CameraMover
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Goal
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.SceneController
 ed9279a9d1042bde3a6ae6cd0c1a92fa Assembly-CSharp.dll:Cinemachine.CinemachinePOV
 b288608f332c48587b24d43541790fe8 UniRx.Examples.dll:UniRx.Examples.Sample13_ToDoApp
@@ -173,6 +175,7 @@ a723fbedae099b288a2c2e28fddfb6d7 Assembly-CSharp.dll:.SelectIconController
 05524b8f659e7bfe5756d1335fec24ba UniRx.dll:UniRx.Triggers.ObservableTriggerTrigger
 aafc2b46bd32460976adddbdaba5eea8 Assembly-CSharp.dll:.FadeManager
 166f2fb08a5bd8e5be94b11ac3fce237 Assembly-CSharp.dll:Cinemachine.CinemachineTargetGroup
+7956d4c732de46cd1338d589c004e8bb Assembly-CSharp.dll:.Rolling
 05524b8f659e7bfe5756d1335fec24ba UniRx.dll:UniRx.Triggers.ObservableCollisionTrigger
 05524b8f659e7bfe5756d1335fec24ba UniRx.dll:UniRx.Triggers.ObservableTrigger2DTrigger
 05524b8f659e7bfe5756d1335fec24ba UniRx.dll:UniRx.Triggers.ObservableParticleTrigger
@@ -210,7 +213,7 @@ d9ae8c6401801a4a88651871144fd209 Assembly-CSharp.dll:Cinemachine.CinemachineBlen
 e0f7ffd5d5c2abe4b2e16569a21163da UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioRoom
 05524b8f659e7bfe5756d1335fec24ba UniRx.dll:UniRx.Triggers.ObservablePointerUpTrigger
 e0f7ffd5d5c2abe4b2e16569a21163da UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioRoom
-2e2c59aac7c954fd29566ed116fae7f8 Assembly-CSharp.dll:.GoalController
+49f574d52910ff887a710e0525f32df8 Assembly-CSharp.dll:.GoalController
 05524b8f659e7bfe5756d1335fec24ba UniRx.dll:UniRx.Triggers.ObservableCollision2DTrigger
 0fcbcbd9afa80c74caef99e7ba749bb0 Assembly-CSharp.dll:Cinemachine.CinemachineCollider
 0f54a2b60c93ab3dd560d125a2b60197 Assembly-CSharp.dll:Cinemachine.CinemachineBlenderSettings
@@ -245,4 +248,3 @@ ef47b5b296e56702c76218de521ccc37 Assembly-CSharp.dll:Cinemachine.CinemachineBrai
 05524b8f659e7bfe5756d1335fec24ba UniRx.Examples.dll:UniRx.Examples.Sample06_ConvertToCoroutine
 9dd74a41363b134db6b934985dfd2f92 Assembly-CSharp.dll:Cinemachine.CinemachineClearShot
 05524b8f659e7bfe5756d1335fec24ba UniRx.Examples.dll:UniRx.Examples.Sample08_DetectDoubleClick
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Goal

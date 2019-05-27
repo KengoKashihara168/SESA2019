@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/SelectScene/SelectScene.unity
+- path: "Assets/Stage/\u661F\u7A7A/StarrySky.unity"
   isLoaded: 1
   isActive: 1

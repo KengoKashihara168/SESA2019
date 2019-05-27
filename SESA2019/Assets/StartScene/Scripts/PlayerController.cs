@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] Sprite faceSprite;
     Transform effect;
     int shakeCount;
     Rigidbody2D rigid;
@@ -13,7 +14,7 @@ public class PlayerController : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
-        effect = transform.GetChild(0);
+        effect = transform.GetChild(1);
         effect.GetComponent<StarEffectController>().Play(true);
         effect.GetComponent<EffectSE>().Play();
         shakeCount = 1;
@@ -38,6 +39,9 @@ public class PlayerController : MonoBehaviour
             GameObject.Find("VcamManager").GetComponent<VCameraController>().Shake();
             shakeCount--;
         }
+
+        SpriteRenderer faseRenderer = transform.GetChild(0).GetComponent<SpriteRenderer>();
+        faseRenderer.sprite = faceSprite;
     }
 
     private void OnTriggerExit2D(Collider2D collision)

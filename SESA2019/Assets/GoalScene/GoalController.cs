@@ -8,6 +8,7 @@ public class GoalController : MonoBehaviour
     [SerializeField] Animator anime;
     [SerializeField] ParticleSystem sparkle;
     [SerializeField] AudioClip[] audios;
+    [SerializeField] Sprite faseSprite;
     private AudioSource[] audioSources;
 
     const float ANIMATION_TIME = 4.0f;

@@ -6,6 +6,14 @@ TagManager:
   tags:
   - SpeedRing
   - Target
+  - BetaBeta
+  - Enemy
+  - Sticker
+  - TsuruTsuru
+  - Ground
+  - Star
+  - Circle
+  - Goal
   layers:
   - Default
   - TransparentFX
