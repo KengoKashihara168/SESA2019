@@ -5,10 +5,12 @@ using UnityEngine.UI;
 
 public class StageData : MonoBehaviour
 {
-    Vector3 point;             // 恒星の座標
-    public float aroundTime;   // １回転する時間(秒÷360°)
-    bool checkFlag;            // 選択判別フラグ
+    public StageType stageType;
     public Sprite textImage;   // 説明文のスプライト
+    [SerializeField] float aroundTime;   // １回転する時間(秒÷360°)
+
+    Vector3 point;             // 恒星の座標
+    bool checkFlag;            // 選択判別フラグ
     RectTransform rect;        // 画像データ
     Vector2 defaultSize;       // 初期サイズ
 
@@ -49,7 +51,7 @@ public class StageData : MonoBehaviour
         // フラグを立てる
         checkFlag = true;
         // 画像を大きくする
-        Vector2 extend = new Vector2(0.5f, 0.5f);
+        Vector2 extend = new Vector2(1.0f, 1.0f);
         rect.sizeDelta += extend;
         // セレクト音の再生
         GetComponent<AudioSource>().Play();

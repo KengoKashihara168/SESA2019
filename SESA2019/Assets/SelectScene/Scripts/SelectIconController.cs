@@ -6,16 +6,14 @@ using UnityEngine.UI;
 public class SelectIconController : MonoBehaviour
 {
     [SerializeField] float moveSpeed;
+    [SerializeField] ParticleSystem starEffect;
     private float time;
-    private Transform stageTransform;
+    private Transform targetStage;
 
 	// Use this for initialization
 	void Start ()
     {
         time = 0.0f;
-        stageTransform = GameObject.Find("Stage1").transform;
-        //transform.SetParent(stage.transform);
-        transform.GetChild(1).GetComponent<StarEffectController>().Play(!IsReach());
     }
 	
 	// Update is called once per frame
@@ -24,36 +22,30 @@ public class SelectIconController : MonoBehaviour
         Move();
     }
 
-    public void Migrate(Image nextStage)
+    public void Migrate(Image stage)
     {
-        //transform.SetParent(nextStage.transform);
-        stageTransform = nextStage.transform;
+        targetStage = stage.transform;
     }
 
     void Move()
     {
         Vector2 from = transform.position;
-        Vector2 to = stageTransform.position;
+        Vector2 to = targetStage.position;
         time = 1.0f / moveSpeed;
         transform.position = Vector2.Lerp(from, to, time);
     }
 
     bool IsReach()
     {
-        if (ParentDistance() <= 0.2f) return true;
+        if (TargetDistance() <= 0.2f) return true;
         return false;
     }
 
-    float ParentDistance()
+    float TargetDistance()
     {
         Vector2 from = transform.position;
-        Vector2 to = stageTransform.position;
+        Vector2 to = targetStage.position;
         Vector2 distance = to - from;
         return distance.magnitude;
-    }
-
-    public Sprite GetTargetTextImage()
-    {
-        return stageTransform.gameObject.GetComponent<StageData>().textImage;
     }
 }

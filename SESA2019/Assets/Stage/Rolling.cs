@@ -25,7 +25,7 @@ public class Rolling : MonoBehaviour
     {
         if(collision.tag.Equals("Goal"))
         {
-            Debug.Log("ゴール");
+            SceneController.Instance.ChangeScene("GoalScene", 1.0f);
         }
     }
 }

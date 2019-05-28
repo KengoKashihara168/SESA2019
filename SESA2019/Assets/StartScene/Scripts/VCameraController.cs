@@ -5,10 +5,12 @@ using Cinemachine;
 
 public class VCameraController : MonoBehaviour
 {
-    bool shakeFlag;
-    public CinemachineVirtualCamera firstVcam;
-    public CinemachineVirtualCamera secondVcam;
-    public int shakeTime;
+    [SerializeField] CinemachineVirtualCamera firstVcam;
+    [SerializeField] CinemachineVirtualCamera secondVcam;
+    [SerializeField] int shakeTime;
+
+    private bool shakeFlag;
+    
 
     // Use this for initialization
     void Start ()

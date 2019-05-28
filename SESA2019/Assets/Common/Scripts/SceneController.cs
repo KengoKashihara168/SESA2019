@@ -7,6 +7,7 @@ using UniRx.Triggers;
 
 public class SceneController : MonoBehaviour
 {
+    public static StageType stageType = StageType.Starry;
     private static SceneController instance;
 
     public static SceneController Instance
@@ -21,11 +22,19 @@ public class SceneController : MonoBehaviour
             return instance;
         }
 
-        set { }
+        set { }        
     }
 
     public void ChangeScene(string sceneName, float fadeTime = 0.0f)
     {
         this.UpdateAsObservable().Take(1).Subscribe(x => FadeManager.Instance.LoadScene(sceneName, fadeTime));
     }
+}
+
+public enum StageType
+{
+    Starry, // 星空
+    Fungi,  // きのこ
+    Ice,    // 氷
+    Forest, // 森
 }

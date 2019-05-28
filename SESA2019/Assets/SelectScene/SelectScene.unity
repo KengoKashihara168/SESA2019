@@ -155,7 +155,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 4f1c8478cfb1792449318cc9a954a410, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -620,6 +620,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  starEffect: {fileID: 1392444587}
 --- !u!114 &654922177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -875,6 +876,11 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: b4d78b1c03038f44aab04b061f618c1d,
         type: 3}
+    - target: {fileID: 114040705006944412, guid: fa00ccafdba2365418aadc295515ceb7,
+        type: 2}
+      propertyPath: stageType
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fa00ccafdba2365418aadc295515ceb7, type: 2}
   m_IsPrefabParent: 0
@@ -1005,6 +1011,11 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 9a538965f092b604c8776bfbb57f4426,
         type: 3}
+    - target: {fileID: 114040705006944412, guid: fa00ccafdba2365418aadc295515ceb7,
+        type: 2}
+      propertyPath: stageType
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fa00ccafdba2365418aadc295515ceb7, type: 2}
   m_IsPrefabParent: 0
@@ -1315,6 +1326,11 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: c64768faeb8018f409e62f2b2162e3fe,
         type: 3}
+    - target: {fileID: 114040705006944412, guid: fa00ccafdba2365418aadc295515ceb7,
+        type: 2}
+      propertyPath: stageType
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fa00ccafdba2365418aadc295515ceb7, type: 2}
   m_IsPrefabParent: 0
@@ -1338,7 +1354,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1292576066}
   - component: {fileID: 1292576067}
-  - component: {fileID: 1292576065}
   - component: {fileID: 1292576068}
   m_Layer: 0
   m_Name: StageManagar
@@ -1347,19 +1362,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1292576065
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1292576064}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0934cc9d669d704e8af81db5d18c603, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainCamera: {fileID: 0}
-  zoomFlag: 0
 --- !u!4 &1292576066
 Transform:
   m_ObjectHideFlags: 0
@@ -1390,6 +1392,7 @@ MonoBehaviour:
   - {fileID: 1660662411}
   - {fileID: 2050215258}
   - {fileID: 1056110547}
+  selectIcon: {fileID: 654922174}
   describe: {fileID: 152454102}
 --- !u!82 &1292576068
 AudioSource:
@@ -1606,6 +1609,11 @@ Transform:
   m_PrefabParentObject: {fileID: 4540070094637088, guid: 74ea2b82c67374345a011a3cfe43afee,
     type: 2}
   m_PrefabInternal: {fileID: 1567398315}
+--- !u!198 &1392444587 stripped
+ParticleSystem:
+  m_PrefabParentObject: {fileID: 198669625337718546, guid: cc6a123ad7469bc48844601ae9bd8f00,
+    type: 2}
+  m_PrefabInternal: {fileID: 1792604051}
 --- !u!1 &1397729660
 GameObject:
   m_ObjectHideFlags: 0
@@ -1659,7 +1667,7 @@ Camera:
   far clip plane: 10000
   field of view: 173
   orthographic: 1
-  orthographic size: 20
+  orthographic size: 22
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1798,9 +1806,9 @@ RectTransform:
   m_Father: {fileID: 308158925}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 100, y: -50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 100, y: 40}
   m_SizeDelta: {x: 150, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1518258772
@@ -1967,6 +1975,11 @@ Prefab:
         type: 2}
       propertyPath: m_PreserveAspect
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114040705006944412, guid: fa00ccafdba2365418aadc295515ceb7,
+        type: 2}
+      propertyPath: stageType
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fa00ccafdba2365418aadc295515ceb7, type: 2}

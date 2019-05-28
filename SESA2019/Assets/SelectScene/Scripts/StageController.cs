@@ -5,24 +5,25 @@ using UnityEngine.UI;
 
 public class StageController : MonoBehaviour
 {
-    [SerializeField] Image[] stage;    // ステージ
-    [SerializeField] Button  describe; // 説明テキスト
-    GameObject selectIcon;
+    [SerializeField] Image[]    stage;       // ステージ
+    [SerializeField] GameObject selectIcon;  // セレクトアイコン
+    [SerializeField] Button     describe;    // 説明テキスト
     bool changeFlag;
 
 	// Use this for initialization
 	void Start ()
     {
+        // ステージを選択する
+        Select(stage[(int)SceneController.stageType]);
         // 各ステージに中心点を設定する
         Vector3 center = stage[stage.Length - 1].transform.position;
         foreach (Image i in stage)
         {
             i.GetComponent<StageData>().SetCenterPoint(center);
         }
-        // 説明テキストを非表示にする
-        describe.GetComponent<Image>().color = Color.clear;
-        selectIcon = GameObject.Find("SelectIcon");
-        SetDescribeImage(selectIcon.GetComponent<SelectIconController>().GetTargetTextImage());
+
+        // 説明テキストを設定
+        SetDescribeImage(stage[(int)SceneController.stageType].GetComponent<StageData>().textImage);
         changeFlag = false;
     }
 	
@@ -56,15 +57,15 @@ public class StageController : MonoBehaviour
     private void Select(Image stage)
     {
         if (stage.GetComponent<StageData>().GetFlag()) // 既に選択されていたら
-        {            
+        {
+            SceneController.stageType = stage.GetComponent<StageData>().stageType;
             // 選択されているステージに遷移
             SceneTransition();
-            //GetComponent<ZoomController>().Zoom(selectStage.transform);
         }
         else
         {
             // ステージを選択する
-            StageReset();            
+            StageReset();
             selectIcon.GetComponent<SelectIconController>().Migrate(stage);
             stage.GetComponent<StageData>().Selected();
         }
@@ -75,9 +76,7 @@ public class StageController : MonoBehaviour
     // 説明テキストの設定
     public void SetDescribeImage(Sprite text)
     {
-        //Transform child = describe.transform.GetChild(0);
-        describe.GetComponent<Image>().sprite = text;       // 画像を設定する
-        describe.GetComponent<Image>().color = Color.white; // 画像を表示する
+        describe.GetComponent<Image>().sprite = text; // 画像を設定する
     }
 
     public void SceneTransition()
