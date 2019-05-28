@@ -1969,7 +1969,7 @@ Prefab:
         type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: c64768faeb8018f409e62f2b2162e3fe,
+      objectReference: {fileID: 21300000, guid: e6af2b3b13f4e964e9fd51a29444addc,
         type: 3}
     - target: {fileID: 114268065969841866, guid: fa00ccafdba2365418aadc295515ceb7,
         type: 2}
@@ -1979,7 +1979,7 @@ Prefab:
     - target: {fileID: 114040705006944412, guid: fa00ccafdba2365418aadc295515ceb7,
         type: 2}
       propertyPath: stageType
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fa00ccafdba2365418aadc295515ceb7, type: 2}

@@ -17,9 +17,9 @@ public class Goal : MonoBehaviour
 		
 	}
 
-    private void OnTriggerEnter2D(Collider2D trigger)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(trigger.tag.Equals("Star"))
+        if(collision.gameObject.tag.Equals("Player"))
         {
             Debug.Log("シーン遷移");
         }

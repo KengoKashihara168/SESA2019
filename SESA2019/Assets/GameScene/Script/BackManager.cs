@@ -58,7 +58,7 @@ public class BackManager : MonoBehaviour
             var pos = _backTransform[j].localPosition;
             var size = _backSprite.rect.size.x;
 
-            pos.x += size * 0.1f * _backTransform[j].localScale.x;
+            pos.x += size * 0.1f * _backTransform[j].localScale.x / 3;
 
             _backTransform[j].localPosition = pos;
 

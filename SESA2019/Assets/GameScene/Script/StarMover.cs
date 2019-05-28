@@ -98,7 +98,8 @@ public class StarMover : StageObject
     /// </summary>
     protected override void PoseFixedUpdate()
     {
-        if(++_poseTime > _poseMaxTime)
+        if (_damageTime < 0) return;
+        if (++_poseTime > _poseMaxTime)
         {
             _poseTime = 0;
             GameData.Instance().NoPose();
@@ -224,7 +225,12 @@ public class StarMover : StageObject
             _jampTime          = _maxJampTime;
         }
 
-        if (col.tag.Equals("Enemy") && _damageTime < 0)
+        if (col.tag.Equals("CureRing"))
+        {
+            changeSprite(_noDamageSprite);
+        }
+
+            if (col.tag.Equals("Enemy") && _damageTime < 0)
         {
             _damageTime = _maxDamageTime;
             changeSprite(_damageSprite);
@@ -241,6 +247,11 @@ public class StarMover : StageObject
         if (col.tag.Equals("BetaBeta"))
         {
             _groundState = BetaBeta;
+        }
+
+        if(col.tag.Equals("Goal"))
+        {
+            SceneController.Instance.ChangeScene("GoalScene", 0.0f);
         }
     }
 

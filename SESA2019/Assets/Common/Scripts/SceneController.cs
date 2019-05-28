@@ -7,7 +7,7 @@ using UniRx.Triggers;
 
 public class SceneController : MonoBehaviour
 {
-    public static StageType stageType = StageType.Starry;
+    public static StageType stageType = StageType.Tutorial;
     private static SceneController instance;
 
     public static SceneController Instance
@@ -33,8 +33,9 @@ public class SceneController : MonoBehaviour
 
 public enum StageType
 {
-    Starry, // 星空
-    Fungi,  // きのこ
-    Ice,    // 氷
-    Forest, // 森
+    Tutorial, // 星空
+    Fungi,    // きのこ
+    Ice,      // 氷
+    Forest,   // 森
+    darkness, // 暗闇
 }
