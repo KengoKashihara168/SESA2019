@@ -35,12 +35,6 @@ public class SelectIconController : MonoBehaviour
         transform.position = Vector2.Lerp(from, to, time);
     }
 
-    bool IsReach()
-    {
-        if (TargetDistance() <= 0.2f) return true;
-        return false;
-    }
-
     float TargetDistance()
     {
         Vector2 from = transform.position;

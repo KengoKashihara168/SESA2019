@@ -62,6 +62,25 @@ public class ShapeChanger : MonoBehaviour
         {
             _isJamping = true;
         }
+
+        ////////////////////////////////////////////////////////////////
+        
+        //if(Input.GetKeyDown(KeyCode.UpArrow))
+        //{
+        //    _shapeId = SharpId;
+        //}
+
+        //if (Input.GetKeyDown(KeyCode.LeftArrow))
+        //{
+        //    _shapeId = NormalId;
+        //}
+
+        //if (Input.GetKeyDown(KeyCode.DownArrow))
+        //{
+        //    _shapeId = WideId;
+        //}
+
+        ////////////////////////////////////////////////////////////////
     }
 
 
