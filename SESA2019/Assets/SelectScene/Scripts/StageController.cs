@@ -10,12 +10,17 @@ public class StageController : MonoBehaviour
     [SerializeField] Button     describe;    // 説明テキスト
     bool changeFlag;
 
+    void Awake()
+    {
+        
+    }
+
 	// Use this for initialization
 	void Start ()
     {
         // ステージを選択する
         Select(stage[(int)SceneController.stageType]);
-        selectIcon.GetComponent<SelectIconController>().Migrate(stage[(int)SceneController.stageType]);
+
         // 各ステージに中心点を設定する
         Vector3 center = stage[stage.Length - 1].transform.position;
         foreach (Image i in stage)
@@ -45,19 +50,19 @@ public class StageController : MonoBehaviour
             }            
         }
 
-        ///***************************************************************/
+        /***************************************************************/
 
-        //if(Input.GetKeyDown(KeyCode.A))
-        //{
-        //    Select(stage[(int)StageType.Tutorial]);
-        //}
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            Select(stage[(int)StageType.Tutorial]);
+        }
 
-        //if (Input.GetKeyDown(KeyCode.B))
-        //{
-        //    Select(stage[(int)StageType.Ice]);
-        //}
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            Select(stage[(int)StageType.Ice]);
+        }
 
-        ///***************************************************************/
+        /***************************************************************/
 
     }
 

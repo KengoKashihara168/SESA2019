@@ -1,4 +1,4 @@
 sceneSetups:
-- path: "Assets/Stage/\u304D\u306E\u3053/Fungi.unity"
+- path: "Assets/Stage/\u6C37/Ice.unity"
   isLoaded: 1
   isActive: 1

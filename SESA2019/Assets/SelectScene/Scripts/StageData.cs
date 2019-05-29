@@ -14,11 +14,15 @@ public class StageData : MonoBehaviour
     RectTransform rect;        // 画像データ
     Vector2 defaultSize;       // 初期サイズ
 
-    // Use this for initialization
-    void Start ()
+    void Awake()
     {
         rect = GetComponent<RectTransform>();
         defaultSize = rect.sizeDelta;
+    }
+
+    // Use this for initialization
+    void Start ()
+    {        
         Reset(); // 設定をクリアする
 	}
 	

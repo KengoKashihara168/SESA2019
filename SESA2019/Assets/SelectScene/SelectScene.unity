@@ -621,6 +621,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   starEffect: {fileID: 1392444587}
+  targetStage: {fileID: 1656494887}
 --- !u!114 &654922177
 MonoBehaviour:
   m_ObjectHideFlags: 0

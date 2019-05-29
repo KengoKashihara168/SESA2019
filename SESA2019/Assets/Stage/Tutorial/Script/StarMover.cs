@@ -216,6 +216,8 @@ public class StarMover : StageObject
     /// <param name="col"></param>
     private void OnTriggerEnter2D(Collider2D col)
     {
+        SoundEffect se = GetComponent<SoundEffect>();
+
         if (col.tag.Equals("Sticker"))
         {
             ++_stickerNum;
@@ -228,12 +230,14 @@ public class StarMover : StageObject
             _rgdb.velocity     = _ringSpeed;
             _rgdb.gravityScale = 0;
             _jampTime          = _maxJampTime;
+            se.PlaySE(0);
         }
 
         if (col.tag.Equals("CureRing"))
         {
             changeSprite(_noDamageSprite);
             _life = _maxLife;
+            se.PlaySE(0);
         }
 
         if (col.tag.Equals("Enemy") && _damageTime < 0)
@@ -248,6 +252,7 @@ public class StarMover : StageObject
             changeAlpha(_damageAlpha);
             GameData.Instance().Pose();
             _faceSpriteRenderer.sprite = _sadFaceSprite;
+            se.PlaySE(2);
         }
 
         if (col.tag.Equals("TsuruTsuru"))
@@ -336,6 +341,7 @@ public class StarMover : StageObject
         _rgdb.velocity     = _jampPower;
         _rgdb.gravityScale = 0;
         _jampTime          = _maxJampTime;
+        GetComponent<SoundEffect>().PlaySE(1);
     }
 
     /// <summary>
