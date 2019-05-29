@@ -650,6 +650,8 @@ MonoBehaviour:
   _slowSpeed: 5
   _normalFaceSprite: {fileID: 21300000, guid: 9af801c2dcc5c044296144dcea8cf64e, type: 3}
   _sadFaceSprite: {fileID: 21300000, guid: 557edcfcd5cf2a240afffb46d297f37e, type: 3}
+  _gameOverFaceSprite: {fileID: 21300000, guid: dd44bcd74b0b8794a85f3828d0a70d82,
+    type: 3}
   _faceSpriteRenderer: {fileID: 212067113675777792}
   speed: 0
 --- !u!212 &212019593304605568

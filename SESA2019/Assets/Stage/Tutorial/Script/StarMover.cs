@@ -40,6 +40,8 @@ public class StarMover : StageObject
     [SerializeField] private Vector2 _ringSpeed;   // リングを通ったあとのスピード
 
     // ダメージを受けた時
+    private int         _life;              // ライブ
+    private const int   _maxLife = 2;       // ライフの最大値
     private int         _damageTime;        // ダメージを受けたときの無敵時間
     private const float _noDamageAlpha = 1; // 無敵でないときアルファ値 
     private int         _poseTime;
@@ -60,6 +62,7 @@ public class StarMover : StageObject
     // 顔
     [SerializeField] private Sprite         _normalFaceSprite;   // 普通の顔のSprite
     [SerializeField] private Sprite         _sadFaceSprite;      // 悲しい顔のSprite
+    [SerializeField] private Sprite         _gameOverFaceSprite; // ゲームオーバーの顔Sprite
     [SerializeField] private SpriteRenderer _faceSpriteRenderer; // 顔のSpriteRenderer
 
     // デバッグ
@@ -79,6 +82,8 @@ public class StarMover : StageObject
         _poseTime             = 0;
         _groundState          = KoroKoro;
         _jampAble             = false;
+        _life                 = _maxLife;
+        GameData.Instance().NoPose();
     }
 
 
@@ -128,19 +133,8 @@ public class StarMover : StageObject
 
         --_jampTime;
 
-        // ジャンプ中の処理
-        if (_jampTime >= 0)
-        {
-            _rgdb.angularVelocity = 0;
-            if (_jampTime == 0)
-            {
-                _rgdb.velocity = Vector2.zero;
-            }
-            _rgdb.gravityScale = 0;
-        }
-
         // 刺さっているときの処理
-        else if (_stickerNum > 0 && _isStick)
+        if (_stickerNum > 0 && _isStick && _jampTime <= _maxJampTime / 2)
         {
             _rgdb.gravityScale = 0;
 
@@ -155,6 +149,17 @@ public class StarMover : StageObject
             _rgdb.velocity = _stickerSpeed * stickDirection;
 
             _jampTime = 0;
+        }
+
+        // ジャンプ中の処理
+        else if (_jampTime >= 0)
+        {
+            _rgdb.angularVelocity = 0;
+            if (_jampTime == 0)
+            {
+                _rgdb.velocity = Vector2.zero;
+            }
+            _rgdb.gravityScale = 0;
         }
 
         // 刺さってないときの処理
@@ -211,8 +216,6 @@ public class StarMover : StageObject
     /// <param name="col"></param>
     private void OnTriggerEnter2D(Collider2D col)
     {
-        SoundEffect se = GetComponent<SoundEffect>();
-
         if (col.tag.Equals("Sticker"))
         {
             ++_stickerNum;
@@ -225,23 +228,26 @@ public class StarMover : StageObject
             _rgdb.velocity     = _ringSpeed;
             _rgdb.gravityScale = 0;
             _jampTime          = _maxJampTime;
-            se.PlaySE(0);
         }
 
         if (col.tag.Equals("CureRing"))
         {
             changeSprite(_noDamageSprite);
-            se.PlaySE(0);
+            _life = _maxLife;
         }
 
         if (col.tag.Equals("Enemy") && _damageTime < 0)
         {
+            if (--_life == 0)
+            {
+                GameData.Instance().Pose();
+                GameOver();
+            }
             _damageTime = _maxDamageTime;
             changeSprite(_damageSprite);
             changeAlpha(_damageAlpha);
             GameData.Instance().Pose();
             _faceSpriteRenderer.sprite = _sadFaceSprite;
-            se.PlaySE(2);
         }
 
         if (col.tag.Equals("TsuruTsuru"))
@@ -254,9 +260,14 @@ public class StarMover : StageObject
             _groundState = BetaBeta;
         }
 
-        if(col.tag.Equals("Goal"))
+        if (col.tag.Equals("Fall"))
         {
-            SceneController.Instance.ChangeScene("GoalScene", 0.0f);
+            GameOver();
+        }
+
+        if (col.tag.Equals("Clear"))
+        {
+            SceneController.Instance.ChangeScene("GoalScene", 1.0f);
         }
     }
 
@@ -320,13 +331,11 @@ public class StarMover : StageObject
         {
             return;
         }
-
+        
         _jampAble          = false;
         _rgdb.velocity     = _jampPower;
         _rgdb.gravityScale = 0;
         _jampTime          = _maxJampTime;
-
-        GetComponent<SoundEffect>().PlaySE(1);
     }
 
     /// <summary>
@@ -351,5 +360,14 @@ public class StarMover : StageObject
         {
             sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, a);
         }
+    }
+
+    /// <summary>
+    /// ゲームオーバー
+    /// </summary>
+    private void GameOver()
+    {
+        _normalFaceSprite = _gameOverFaceSprite;
+        SceneController.Instance.ChangeScene("SelectScene", 1.0f);
     }
 }
