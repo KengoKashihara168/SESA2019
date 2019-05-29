@@ -54,6 +54,7 @@ public class StarController : MonoBehaviour
 
     private void SceneTransition()
     {
+        SceneController.stageType = StageType.Tutorial;
         SceneController.Instance.ChangeScene("SelectScene", 1.0f);
     }
 }

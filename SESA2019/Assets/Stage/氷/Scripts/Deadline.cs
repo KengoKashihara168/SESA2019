@@ -19,6 +19,9 @@ public class Deadline : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        SceneController.Instance.ChangeScene("SelectScene", 1.0f);
+        if(collision.gameObject.tag.Equals("Circle"))
+        {
+            SceneController.Instance.ChangeScene("SelectScene", 1.0f);
+        }
     }
 }
