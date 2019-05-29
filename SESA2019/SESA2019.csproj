@@ -366,6 +366,7 @@
     <Compile Include="Assets\GameScene\Script\GameData.cs" />
     <Compile Include="Assets\GameScene\Script\Meteo.cs" />
     <Compile Include="Assets\GameScene\Script\ShapeChanger.cs" />
+    <Compile Include="Assets\GameScene\Script\SignBoard.cs" />
     <Compile Include="Assets\GameScene\Script\SpeedRing.cs" />
     <Compile Include="Assets\GameScene\Script\StageObject.cs" />
     <Compile Include="Assets\GameScene\Script\StarMover.cs" />
@@ -420,7 +421,12 @@
     <Compile Include="Assets\SelectScene\Scripts\StageData.cs" />
     <Compile Include="Assets\SelectScene\Scripts\StarEffectController.cs" />
     <Compile Include="Assets\SelectScene\Scripts\ZoomController.cs" />
-    <Compile Include="Assets\Stage\Rolling.cs" />
+    <Compile Include="Assets\Stage\氷\Scripts\Deadline.cs" />
+    <Compile Include="Assets\Stage\氷\Scripts\Enemy.cs" />
+    <Compile Include="Assets\Stage\氷\Scripts\PrefabCreator.cs" />
+    <Compile Include="Assets\Stage\氷\Scripts\Rocket.cs" />
+    <Compile Include="Assets\Stage\氷\Scripts\Sensor.cs" />
+    <Compile Include="Assets\Stage\氷\Scripts\SpaceShip.cs" />
     <Compile Include="Assets\StartScene\Scripts\EffectSE.cs" />
     <Compile Include="Assets\StartScene\Scripts\Face.cs" />
     <Compile Include="Assets\StartScene\Scripts\FloorSE.cs" />
