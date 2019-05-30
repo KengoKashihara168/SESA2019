@@ -50,24 +50,24 @@ public class StageController : MonoBehaviour
             }            
         }
 
-        /***************************************************************/
+        ///***************************************************************/
 
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            Select(stage[(int)StageType.Tutorial]);
-        }
+        //if (Input.GetKeyDown(KeyCode.A))
+        //{
+        //    Select(stage[(int)StageType.Tutorial]);
+        //}
 
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            Select(stage[(int)StageType.Ice]);
-        }
+        //if (Input.GetKeyDown(KeyCode.S))
+        //{
+        //    Select(stage[(int)StageType.Ice]);
+        //}
 
-        if(Input.GetKeyDown(KeyCode.D))
-        {
-            Select(stage[(int)StageType.Fungi]);
-        }
+        //if(Input.GetKeyDown(KeyCode.D))
+        //{
+        //    Select(stage[(int)StageType.Fungi]);
+        //}
 
-        /***************************************************************/
+        ///***************************************************************/
 
     }
 

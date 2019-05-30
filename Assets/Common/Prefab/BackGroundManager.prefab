@@ -52,14 +52,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backGrounds:
-  - {fileID: 21300000, guid: cc3031bccad533d48ac92e067bd94b74, type: 3}
+  - {fileID: 21300000, guid: fea615110c9e11744b5e1f4cc2ae7338, type: 3}
   - {fileID: 21300000, guid: c309287e90a25584d94a8a83bc968920, type: 3}
   - {fileID: 21300000, guid: b936c4d93f9116845b294fc7407c2f33, type: 3}
   - {fileID: 21300000, guid: a2f5a1785f9e5c6448a4a23b5c5fd489, type: 3}
+  - {fileID: 21300000, guid: fea615110c9e11744b5e1f4cc2ae7338, type: 3}
   floors:
   - {fileID: 21300000, guid: e61744dc6999e4c45a490cd2ff94956a, type: 3}
   - {fileID: 21300000, guid: 9aff8691a8100fb42860c0d50c80a535, type: 3}
   - {fileID: 21300000, guid: 058c2c7a01913d24fa0d0143597ec3a9, type: 3}
-  - {fileID: 21300000, guid: 9fbdf1cb2e2e0034c9b0f4dd7c1beb70, type: 3}
+  - {fileID: 21300000, guid: aedc88bdb0a90f046a3d76d45fb3f68f, type: 3}
+  - {fileID: 21300000, guid: e61744dc6999e4c45a490cd2ff94956a, type: 3}
   backGround: {fileID: 0}
   floor: {fileID: 0}
