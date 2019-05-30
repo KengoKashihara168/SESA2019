@@ -33,9 +33,9 @@ public class SceneController : MonoBehaviour
 
 public enum StageType
 {
-    Tutorial, // 星空
-    Fungi,    // きのこ
+    Tutorial, // 星空    
     Ice,      // 氷
     Forest,   // 森
+    Fungi,    // きのこ
     darkness, // 暗闇
 }
