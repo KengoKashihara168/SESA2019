@@ -13,10 +13,10 @@ TagManager:
   - Ground
   - Star
   - Circle
-  - Goal
   - CureRing
   - Fall
   - Clear
+  - Range
   layers:
   - Default
   - TransparentFX
