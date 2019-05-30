@@ -1,4 +1,0 @@
-sceneSetups:
-- path: "Assets/Stage/\u6C37/Ice.unity"
-  isLoaded: 1
-  isActive: 1
