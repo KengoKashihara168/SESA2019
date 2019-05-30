@@ -230,14 +230,14 @@ public class StarMover : StageObject
             _rgdb.velocity     = _ringSpeed;
             _rgdb.gravityScale = 0;
             _jampTime          = _maxJampTime;
-            se.PlaySE(0);
+            se.PlaySE(SoundEffect.RingSound);
         }
 
         if (col.tag.Equals("CureRing"))
         {
             changeSprite(_noDamageSprite);
             _life = _maxLife;
-            se.PlaySE(0);
+            se.PlaySE(SoundEffect.RingSound);
         }
 
         if (col.tag.Equals("Enemy") && _damageTime < 0)
@@ -245,6 +245,7 @@ public class StarMover : StageObject
             if (--_life == 0)
             {
                 GameData.Instance().Pose();
+                _sadFaceSprite = _gameOverFaceSprite;
                 GameOver();
             }
             _damageTime = _maxDamageTime;
@@ -252,7 +253,7 @@ public class StarMover : StageObject
             changeAlpha(_damageAlpha);
             GameData.Instance().Pose();
             _faceSpriteRenderer.sprite = _sadFaceSprite;
-            se.PlaySE(2);
+            se.PlaySE(SoundEffect.DamageSound);
         }
 
         if (col.tag.Equals("TsuruTsuru"))
@@ -341,7 +342,7 @@ public class StarMover : StageObject
         _rgdb.velocity     = _jampPower;
         _rgdb.gravityScale = 0;
         _jampTime          = _maxJampTime;
-        GetComponent<SoundEffect>().PlaySE(1);
+        GetComponent<SoundEffect>().PlaySE(SoundEffect.JumpSound);
     }
 
     /// <summary>

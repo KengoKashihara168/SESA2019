@@ -5,6 +5,11 @@ using UnityEngine;
 public class SoundEffect : MonoBehaviour
 {
     [SerializeField] AudioClip[] audios;
+
+    public const int RingSound   = 0;
+    public const int JumpSound   = 1;
+    public const int DamageSound = 2;
+
 	// Use this for initialization
 	void Start ()
     {
@@ -20,6 +25,7 @@ public class SoundEffect : MonoBehaviour
     public void PlaySE(int id)
     {
         AudioSource source = GetComponent<AudioSource>();
+        if (source.clip == audios[id] && source.isPlaying) return;
         source.clip = audios[id];
         source.Play();
     }

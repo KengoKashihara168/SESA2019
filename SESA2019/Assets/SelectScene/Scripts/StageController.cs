@@ -57,9 +57,14 @@ public class StageController : MonoBehaviour
             Select(stage[(int)StageType.Tutorial]);
         }
 
-        if (Input.GetKeyDown(KeyCode.B))
+        if (Input.GetKeyDown(KeyCode.S))
         {
             Select(stage[(int)StageType.Ice]);
+        }
+
+        if(Input.GetKeyDown(KeyCode.D))
+        {
+            Select(stage[(int)StageType.Fungi]);
         }
 
         /***************************************************************/
