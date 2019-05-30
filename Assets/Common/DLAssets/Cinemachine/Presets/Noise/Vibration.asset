@@ -14,20 +14,20 @@ MonoBehaviour:
   m_Position: []
   m_Orientation:
   - X:
-      Amplitude: 20
+      Amplitude: 6
       Frequency: 4
     Y:
-      Amplitude: 8
-      Frequency: 2
+      Amplitude: 0
+      Frequency: 0
     Z:
       Amplitude: 0
       Frequency: 0
   - X:
-      Amplitude: 5
-      Frequency: 2
-    Y:
-      Amplitude: 3
+      Amplitude: 8
       Frequency: 1
+    Y:
+      Amplitude: 0
+      Frequency: 0
     Z:
       Amplitude: 0
       Frequency: 0
