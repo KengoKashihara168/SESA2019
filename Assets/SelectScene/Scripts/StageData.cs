@@ -5,14 +5,14 @@ using UnityEngine.UI;
 
 public class StageData : MonoBehaviour
 {
-    public StageType stageType;
-    public Sprite textImage;   // 説明文のスプライト
-    [SerializeField] float aroundTime;   // １回転する時間(秒÷360°)
-
-    Vector3 point;             // 恒星の座標
-    bool checkFlag;            // 選択判別フラグ
-    RectTransform rect;        // 画像データ
-    Vector2 defaultSize;       // 初期サイズ
+    public StageType stageType;                  // ステージの種類
+    public Sprite textImage;                     // 説明文のスプライト
+    [SerializeField] private float aroundTime;   // １周する時間(秒÷360°)
+    [SerializeField] private float rotateTime;   // 自転する時間(秒÷360°)
+    private Vector3 point;                       // 恒星の座標
+    private bool checkFlag;                      // 選択判別フラグ
+    private RectTransform rect;                  // 画像データ
+    private Vector2 defaultSize;                 // 初期サイズ
 
     void Awake()
     {
@@ -30,6 +30,7 @@ public class StageData : MonoBehaviour
 	void Update ()
     {
         Revolution(); // 公転
+        Rotation();
 	}
 
     // 公転
@@ -38,6 +39,13 @@ public class StageData : MonoBehaviour
         Vector3 axis = Vector3.forward;              // 公転軸
         float angle = 360.0f / (aroundTime * 60.0f); // 回転速度
         transform.RotateAround(point, axis, angle);  // 公転処理
+    }
+
+    void Rotation()
+    {
+        Vector3 rot = Vector3.zero;            // 回転
+        rot.z = 360.0f / (rotateTime * 60.0f); // 角度
+        transform.Rotate(rot);                 // 回転処理
     }
 
     // 引数の座標との中間地点の距離を求める
