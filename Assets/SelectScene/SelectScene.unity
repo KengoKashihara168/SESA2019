@@ -753,7 +753,7 @@ Prefab:
     - target: {fileID: 114040705006944412, guid: fa00ccafdba2365418aadc295515ceb7,
         type: 2}
       propertyPath: rotateTime
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fa00ccafdba2365418aadc295515ceb7, type: 2}
@@ -893,7 +893,7 @@ Prefab:
     - target: {fileID: 114040705006944412, guid: fa00ccafdba2365418aadc295515ceb7,
         type: 2}
       propertyPath: rotateTime
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fa00ccafdba2365418aadc295515ceb7, type: 2}
@@ -1212,7 +1212,7 @@ Prefab:
     - target: {fileID: 114040705006944412, guid: fa00ccafdba2365418aadc295515ceb7,
         type: 2}
       propertyPath: rotateTime
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fa00ccafdba2365418aadc295515ceb7, type: 2}
@@ -1487,7 +1487,7 @@ Prefab:
     - target: {fileID: 114040705006944412, guid: fa00ccafdba2365418aadc295515ceb7,
         type: 2}
       propertyPath: rotateTime
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fa00ccafdba2365418aadc295515ceb7, type: 2}

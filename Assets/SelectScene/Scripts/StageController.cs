@@ -81,15 +81,14 @@ public class StageController : MonoBehaviour
         {
             // 選択されているステージに遷移
             SceneTransition();
+            return;
         }
-        else
-        {
-            // ステージを選択する
-            StageReset();
-            selectIcon.GetComponent<SelectIconController>().SetTarget(stage);
-            stage.GetComponent<StageData>().Selected();
-            SceneController.stageType = stage.GetComponent<StageData>().stageType;
-        }
+
+        // ステージを選択する
+        StageReset();
+        selectIcon.GetComponent<SelectIconController>().SetTarget(stage);
+        stage.GetComponent<StageData>().Selected();
+        SceneController.stageType = stage.GetComponent<StageData>().stageType;
         // 説明テキストを設定する
         SetDescribeImage(stage.GetComponent<StageData>().textImage);
     }
