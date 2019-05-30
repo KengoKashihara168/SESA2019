@@ -1387,7 +1387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc2d446653e0be1409c4939166b4b838, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stage:
+  stages:
   - {fileID: 1656494890}
   - {fileID: 1264134652}
   - {fileID: 1660662411}

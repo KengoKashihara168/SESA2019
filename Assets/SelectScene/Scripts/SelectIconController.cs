@@ -27,7 +27,7 @@ public class SelectIconController : MonoBehaviour
         Move();
     }
 
-    public void Migrate(Image stage)
+    public void SetTarget(Image stage)
     {
         targetStage = stage.transform;
     }

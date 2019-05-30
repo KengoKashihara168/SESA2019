@@ -5,31 +5,26 @@ using UnityEngine.UI;
 
 public class StageController : MonoBehaviour
 {
-    [SerializeField] Image[]    stage;       // ステージ
+    [SerializeField] Image[]    stages;       // ステージ
     [SerializeField] GameObject selectIcon;  // セレクトアイコン
     [SerializeField] Button     describe;    // 説明テキスト
     bool changeFlag;
-
-    void Awake()
-    {
-        
-    }
 
 	// Use this for initialization
 	void Start ()
     {
         // ステージを選択する
-        Select(stage[(int)SceneController.stageType]);
+        Select(stages[(int)SceneController.stageType]);
 
         // 各ステージに中心点を設定する
-        Vector3 center = stage[stage.Length - 1].transform.position;
-        foreach (Image i in stage)
+        Vector3 center = stages[stages.Length - 1].transform.position;
+        foreach (Image i in stages)
         {
             i.GetComponent<StageData>().SetCenterPoint(center);
         }
 
         // 説明テキストを設定
-        SetDescribeImage(stage[(int)SceneController.stageType].GetComponent<StageData>().textImage);
+        SetDescribeImage(stages[(int)SceneController.stageType].GetComponent<StageData>().textImage);
         changeFlag = false;
     }
 	
@@ -39,12 +34,12 @@ public class StageController : MonoBehaviour
         if (Input.GetMouseButtonDown(0)) // クリックされたら
         {
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition); // マウスの座標
-            for (int i = 0; i < stage.Length; i++)
+            for (int i = 0; i < stages.Length; i++)
             {
                 // ステージの範囲を求めてマウスの座標と比較する
-                if (stage[i].GetComponent<StageData>().IsRange(mousePos)) // クリックされた座標が範囲内なら
+                if (stages[i].GetComponent<StageData>().IsRange(mousePos)) // クリックされた座標が範囲内なら
                 {
-                    Select(stage[i]);
+                    Select(stages[i]);
                     break;
                 }
             }            
@@ -74,7 +69,7 @@ public class StageController : MonoBehaviour
     // ステージのフラグを全てリセット
     void StageReset()
     {
-        foreach(Image i in stage)
+        foreach(Image i in stages)
         {
             i.GetComponent<StageData>().Reset();
         }
@@ -84,7 +79,6 @@ public class StageController : MonoBehaviour
     {
         if (stage.GetComponent<StageData>().GetFlag()) // 既に選択されていたら
         {
-            SceneController.stageType = stage.GetComponent<StageData>().stageType;
             // 選択されているステージに遷移
             SceneTransition();
         }
@@ -92,8 +86,9 @@ public class StageController : MonoBehaviour
         {
             // ステージを選択する
             StageReset();
-            selectIcon.GetComponent<SelectIconController>().Migrate(stage);
+            selectIcon.GetComponent<SelectIconController>().SetTarget(stage);
             stage.GetComponent<StageData>().Selected();
+            SceneController.stageType = stage.GetComponent<StageData>().stageType;
         }
         // 説明テキストを設定する
         SetDescribeImage(stage.GetComponent<StageData>().textImage);
