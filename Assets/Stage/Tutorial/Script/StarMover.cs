@@ -62,7 +62,7 @@ public class StarMover : StageObject
     // 顔
     [SerializeField] private Sprite         _normalFaceSprite;   // 普通の顔のSprite
     [SerializeField] private Sprite         _sadFaceSprite;      // 悲しい顔のSprite
-    [SerializeField] private Sprite         _gameOverFaceSprite; // ゲームオーバーの顔Sprite
+    [SerializeField] private Sprite         _gameOverSprite;     // ゲームオーバーの顔Sprite
     [SerializeField] private SpriteRenderer _faceSpriteRenderer; // 顔のSpriteRenderer
 
     // デバッグ
@@ -244,8 +244,7 @@ public class StarMover : StageObject
         {
             if (--_life == 0)
             {
-                GameData.Instance().Pose();
-                _sadFaceSprite = _gameOverFaceSprite;
+                _sadFaceSprite = _gameOverSprite;
                 GameOver();
             }
             _damageTime = _maxDamageTime;
@@ -268,6 +267,7 @@ public class StarMover : StageObject
 
         if (col.tag.Equals("Fall"))
         {
+            _faceSpriteRenderer.sprite = _gameOverSprite;
             GameOver();
         }
 
@@ -374,7 +374,7 @@ public class StarMover : StageObject
     /// </summary>
     private void GameOver()
     {
-        _normalFaceSprite = _gameOverFaceSprite;
+        GameData.Instance().Pose();
         SceneController.Instance.ChangeScene("SelectScene", 1.0f);
     }
 }

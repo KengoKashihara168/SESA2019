@@ -9,9 +9,10 @@ public class SoundEffect : MonoBehaviour
     public const int RingSound   = 0;
     public const int JumpSound   = 1;
     public const int DamageSound = 2;
+    public const int TransSound  = 3;
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start ()
     {
 		
 	}

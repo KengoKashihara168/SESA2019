@@ -1250,7 +1250,7 @@ Prefab:
     - target: {fileID: 224628776891902896, guid: fa00ccafdba2365418aadc295515ceb7,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -5.5
+      value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: 224628776891902896, guid: fa00ccafdba2365418aadc295515ceb7,
         type: 2}
@@ -1310,7 +1310,7 @@ Prefab:
         type: 2}
       propertyPath: textImage
       value: 
-      objectReference: {fileID: 21300000, guid: 9d12bba78995ed74899522d90803a256,
+      objectReference: {fileID: 21300000, guid: 99ee56335e60b3a418187f751638885b,
         type: 3}
     - target: {fileID: 0}
       propertyPath: m_Radius
@@ -1955,7 +1955,7 @@ Prefab:
         type: 2}
       propertyPath: textImage
       value: 
-      objectReference: {fileID: 21300000, guid: 9d12bba78995ed74899522d90803a256,
+      objectReference: {fileID: 21300000, guid: 8a4320e4a0381ac4ab1839dad7f83b1f,
         type: 3}
     - target: {fileID: 0}
       propertyPath: m_Radius
