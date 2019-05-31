@@ -45,26 +45,36 @@ public class StageController : MonoBehaviour
             }            
         }
 
-        ///***************************************************************/
+        /************************動画撮影用隠しコマンド************************/
 
         //if (Input.GetKeyDown(KeyCode.A))
         //{
-        //    Select(stage[(int)StageType.Tutorial]);
+        //    Select(stages[(int)StageType.Tutorial]);
         //}
 
         //if (Input.GetKeyDown(KeyCode.S))
         //{
-        //    Select(stage[(int)StageType.Ice]);
+        //    Select(stages[(int)StageType.Ice]);
         //}
 
-        //if(Input.GetKeyDown(KeyCode.D))
+        //if (Input.GetKeyDown(KeyCode.D))
         //{
-        //    Select(stage[(int)StageType.Fungi]);
+        //    Select(stages[(int)StageType.Forest]);
         //}
 
-        ///***************************************************************/
+        //if (Input.GetKeyDown(KeyCode.F))
+        //{
+        //    Select(stages[(int)StageType.Fungi]);
+        //}
 
-    }
+        //if (Input.GetKeyDown(KeyCode.G))
+        //{
+        //    Select(stages[(int)StageType.darkness]);
+        //}
+
+            /**********************************************************************/
+
+        }
 
     // ステージのフラグを全てリセット
     void StageReset()

@@ -62,6 +62,26 @@ public class ShapeChanger : MonoBehaviour
         {
             _isJamping = true;
         }
+
+        /************************動画撮影用隠しコマンド************************/
+
+        //if (Input.GetKeyDown(KeyCode.UpArrow))
+        //{
+        //    _shapeId = SharpId;
+        //}
+
+        //if (Input.GetKeyDown(KeyCode.RightArrow))
+        //{
+        //    _shapeId = NormalId;
+        //}
+
+        //if (Input.GetKeyDown(KeyCode.DownArrow))
+        //{
+        //    _shapeId = WideId;
+        //}
+
+        /**********************************************************************/
+
     }
 
 
