@@ -38,6 +38,7 @@ public class StarMover : StageObject
     
     // リングでの速度上昇
     [SerializeField] private Vector2 _ringSpeed;   // リングを通ったあとのスピード
+    [SerializeField] private ParticleSystem _shootingStarEffect;
 
     // ダメージを受けた時
     private int         _life;              // ライブ
@@ -158,6 +159,7 @@ public class StarMover : StageObject
             if (_jampTime == 0)
             {
                 _rgdb.velocity = Vector2.zero;
+                if (_shootingStarEffect.isPlaying) _shootingStarEffect.Stop();
             }
             _rgdb.gravityScale = 0;
         }
@@ -207,6 +209,8 @@ public class StarMover : StageObject
         {
             _jampAble = true;
         }
+
+        if (_shootingStarEffect.isPlaying) _shootingStarEffect.Stop();
     }
 
 
@@ -231,6 +235,7 @@ public class StarMover : StageObject
             _rgdb.gravityScale = 0;
             _jampTime          = _maxJampTime;
             se.PlaySE(SoundEffect.RingSound);
+            if(!_shootingStarEffect.isPlaying)_shootingStarEffect.Play();
         }
 
         if (col.tag.Equals("CureRing"))

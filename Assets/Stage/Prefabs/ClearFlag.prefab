@@ -78,6 +78,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a55d5844dfd374499ff3e8d9867a8e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shakeSize: 0.2
 --- !u!212 &212559381786271600
 SpriteRenderer:
   m_ObjectHideFlags: 1
