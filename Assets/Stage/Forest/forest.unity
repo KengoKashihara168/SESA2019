@@ -1405,7 +1405,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 788125769}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -107.037415, y: 19.4, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1269825571}
@@ -1960,7 +1960,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 915773514}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -107.037415, y: 19.4, z: -10}
+  m_LocalPosition: {x: -110.68889, y: 19.4, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 708598962}
@@ -3045,6 +3045,23 @@ Transform:
   m_PrefabParentObject: {fileID: 4273039727204306, guid: 0a8a24d0d8784514895dcf8930afcf05,
     type: 2}
   m_PrefabInternal: {fileID: 2075376959}
+--- !u!1 &1484495176 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1983746398346368, guid: a51c018c040ff8d48b4c91320ef2eb23,
+    type: 2}
+  m_PrefabInternal: {fileID: 276146095}
+--- !u!114 &1484495177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1484495176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a55d5844dfd374499ff3e8d9867a8e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakeSize: 1
 --- !u!1 &1573868503
 GameObject:
   m_ObjectHideFlags: 0
@@ -3419,6 +3436,23 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4d9affbcfea357840bb1e11b553d5f10, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1789624109 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1983746398346368, guid: a51c018c040ff8d48b4c91320ef2eb23,
+    type: 2}
+  m_PrefabInternal: {fileID: 191664708}
+--- !u!114 &1789624110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1789624109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a55d5844dfd374499ff3e8d9867a8e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakeSize: 1.5
 --- !u!1 &1796418483
 GameObject:
   m_ObjectHideFlags: 0

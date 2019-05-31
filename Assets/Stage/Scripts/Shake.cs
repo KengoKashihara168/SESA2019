@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Shake : MonoBehaviour
 {
-
+    [SerializeField] float shakeSize;
 	// Use this for initialization
 	void Start ()
     {
@@ -14,6 +14,6 @@ public class Shake : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        transform.Rotate(new Vector3(0.0f, 0.0f, Mathf.Sin(Time.time * 5f) * 0.1f));
+        transform.Rotate(new Vector3(0.0f, 0.0f, Mathf.Sin(Time.time * 5f) * shakeSize));
     }
 }
