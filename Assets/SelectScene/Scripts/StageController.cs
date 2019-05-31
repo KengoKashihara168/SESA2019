@@ -8,7 +8,6 @@ public class StageController : MonoBehaviour
     [SerializeField] Image[]    stages;       // ステージ
     [SerializeField] GameObject selectIcon;  // セレクトアイコン
     [SerializeField] Button     describe;    // 説明テキスト
-    [SerializeField] Toggle     toggle;
     bool changeFlag;
 
 	// Use this for initialization
@@ -117,5 +116,6 @@ public class StageController : MonoBehaviour
         GetComponent<AudioSource>().Play();
         SceneController.Instance.ChangeScene("StartScene", 1.0f);
         changeFlag = false;
+        describe.interactable = false;
     }
 }
