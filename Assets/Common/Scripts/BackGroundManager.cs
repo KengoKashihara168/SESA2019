@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class BackGroundManager : MonoBehaviour
 {
-    [SerializeField] Sprite[]  backGrounds;
-    [SerializeField] Sprite[]  floors;
-    [SerializeField] Transform backGround;
-    [SerializeField] Transform floor;
-    private StageType          stage;
+    [SerializeField] Sprite[]  backGrounds; // 背景画像の配列
+    [SerializeField] Sprite[]  floors;      // 床画像の配列
+    [SerializeField] Transform backGround;  // 背景
+    [SerializeField] Transform floor;       // 床
+    private StageType          stage;       // 選択されたステージ
 
     private void Awake()
     {
@@ -18,6 +18,7 @@ public class BackGroundManager : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
+        // 背景と床に画像を適用
         backGround.GetComponent<SpriteRenderer>().sprite = backGrounds[(int)stage];
         floor.GetComponent<SpriteRenderer>().sprite      = floors[(int)stage];
     }

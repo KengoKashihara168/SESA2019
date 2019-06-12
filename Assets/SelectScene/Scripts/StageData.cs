@@ -29,11 +29,15 @@ public class StageData : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        Revolution(); // 公転
+        // 公転
+        Revolution();
+        // 自転
         Rotation();
 	}
 
-    // 公転
+    /// <summary>
+    /// 公転
+    /// </summary>
     void Revolution()
     {
         Vector3 axis = Vector3.forward;              // 公転軸
@@ -41,6 +45,9 @@ public class StageData : MonoBehaviour
         transform.RotateAround(point, axis, angle);  // 公転処理
     }
 
+    /// <summary>
+    /// 自転
+    /// </summary>
     void Rotation()
     {
         Vector3 rot = Vector3.zero;            // 回転
@@ -48,7 +55,11 @@ public class StageData : MonoBehaviour
         transform.Rotate(rot);                 // 回転処理
     }
 
-    // 引数の座標との中間地点の距離を求める
+    /// <summary>
+    /// 座標との中間地点の距離を求める
+    /// </summary>
+    /// <param name="to">中間地点を求めたい座標</param>
+    /// <returns></returns>
     public float GetMiddleDistance(Vector2 to)
     {
         Vector2 from = transform.position;              // 座標
@@ -57,7 +68,9 @@ public class StageData : MonoBehaviour
         return planetArea;
     }
 
-    // 選択された処理
+    /// <summary>
+    /// 選択された処理
+    /// </summary>
     public void Selected()
     {
         // フラグを立てる
@@ -69,25 +82,38 @@ public class StageData : MonoBehaviour
         GetComponent<AudioSource>().Play();
     }
 
-    // 設定のクリア
+    /// <summary>
+    /// 設定のクリア
+    /// </summary>
     public void Reset()
     {
         checkFlag = false;
         rect.sizeDelta = defaultSize;
     }
 
-    // フラグの取得
+    /// <summary>
+    /// フラグの取得
+    /// </summary>
+    /// <returns></returns>
     public bool GetFlag()
     {
         return checkFlag;
     }
 
-    // 恒星の座標を設定
+    /// <summary>
+    /// 恒星の座標を設定
+    /// </summary>
+    /// <param name="point"></param>
     public void SetCenterPoint(Vector3 point)
     {
         this.point = point;
     }
 
+    /// <summary>
+    /// マウスが範囲内か調べる
+    /// </summary>
+    /// <param name="mousePoint">マウスの座標</param>
+    /// <returns></returns>
     public bool IsRange(Vector2 mousePoint)
     {
         float mouseLength = mousePoint.magnitude;
@@ -96,6 +122,10 @@ public class StageData : MonoBehaviour
         return true;
     }
 
+    /// <summary>
+    /// 外側までの距離を求める
+    /// </summary>
+    /// <returns></returns>
     float GetOverRange()
     {
         Vector2 position = transform.position;
@@ -104,6 +134,10 @@ public class StageData : MonoBehaviour
         return range;
     }
 
+    /// <summary>
+    /// 内側からの距離を求める
+    /// </summary>
+    /// <returns></returns>
     public float GetUnderRange()
     {
         Vector2 position = transform.position;

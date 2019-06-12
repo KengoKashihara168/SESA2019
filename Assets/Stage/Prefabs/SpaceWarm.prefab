@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114960369054302364}
   - component: {fileID: 58418933662081274}
   m_Layer: 12
-  m_Name: SpaceWarm (1)
+  m_Name: SpaceWarm
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

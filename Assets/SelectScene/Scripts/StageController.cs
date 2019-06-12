@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class StageController : MonoBehaviour
 {
-    [SerializeField] Image[]    stages;       // ステージ
-    [SerializeField] GameObject selectIcon;  // セレクトアイコン
-    [SerializeField] Button     describe;    // 説明テキスト
-    bool changeFlag;
+    [SerializeField] Image[]    stages;     // ステージ
+    [SerializeField] GameObject selectIcon; // セレクトアイコン
+    [SerializeField] Button     nameButton; // 説明テキスト
+    bool changeFlag;                        // シーン遷移フラグ
 
 	// Use this for initialization
 	void Start ()
@@ -24,7 +24,7 @@ public class StageController : MonoBehaviour
         }
 
         // 説明テキストを設定
-        SetDescribeImage(stages[(int)SceneController.stageType].GetComponent<StageData>().textImage);
+        SetNameSprite(stages[(int)SceneController.stageType].GetComponent<StageData>().textImage);
         changeFlag = false;
     }
 	
@@ -76,7 +76,9 @@ public class StageController : MonoBehaviour
 
         }
 
-    // ステージのフラグを全てリセット
+    /// <summary>    
+    /// ステージのフラグを全てリセット
+    /// </summary>
     void StageReset()
     {
         foreach(Image i in stages)
@@ -85,6 +87,10 @@ public class StageController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 選択
+    /// </summary>
+    /// <param name="stage"></param>
     private void Select(Image stage)
     {
         if (stage.GetComponent<StageData>().GetFlag()) // 既に選択されていたら
@@ -100,22 +106,29 @@ public class StageController : MonoBehaviour
         stage.GetComponent<StageData>().Selected();
         SceneController.stageType = stage.GetComponent<StageData>().stageType;
         // 説明テキストを設定する
-        SetDescribeImage(stage.GetComponent<StageData>().textImage);
+        SetNameSprite(stage.GetComponent<StageData>().textImage);
     }
 
-    // 説明テキストの設定
-    public void SetDescribeImage(Sprite text)
+    /// <summary>
+    /// 名前ボタンに惑星名を設定
+    /// </summary>
+    /// <param name="nameSprite"></param>
+    private void SetNameSprite(Sprite nameSprite)
     {
-        describe.GetComponent<Image>().sprite = text; // 画像を設定する
+        nameButton.GetComponent<Image>().sprite = nameSprite; // 画像を設定する
     }
 
+    /// <summary>
+    /// シーン遷移
+    /// </summary>
     public void SceneTransition()
     {
         if (changeFlag) return;
         // 決定音の再生
         GetComponent<AudioSource>().Play();
+        // スタートムービーへ遷移
         SceneController.Instance.ChangeScene("StartScene", 1.0f);
         changeFlag = false;
-        describe.interactable = false;
+        nameButton.interactable = false;
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ButtonController : MonoBehaviour
 {
-    private Image selectStage;
+    private Image selectStage; // 選択されているステージ
 
 	// Use this for initialization
 	void Start ()
@@ -19,14 +19,21 @@ public class ButtonController : MonoBehaviour
 		
 	}
 
+    /// <summary>
+    /// 選択されたステージの取得
+    /// </summary>
+    /// <param name="stage">選択ステージ</param>
     public void SetTarget(Image stage)
     {
         selectStage = stage;
     }
 
+    /// <summary>
+    /// クリックされた関数
+    /// </summary>
     public void OnClick()
     {
+        // 選択されているステージを設定
         SceneController.stageType = selectStage.GetComponent<StageData>().stageType;
-
     }
 }
